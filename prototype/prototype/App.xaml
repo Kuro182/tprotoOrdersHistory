@@ -1,0 +1,17 @@
+﻿<Application x:Class="prototype.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:prototype">
+
+    <Application.StartupUri>Views/ShellWindow.xaml</Application.StartupUri>
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/prototype;component/Themes/MainWindowColor.xaml" />
+                <ResourceDictionary Source="/prototype;component/Themes/MainWindowStyle.xaml" />
+                <ResourceDictionary Source="/prototype;component/Themes/MainWindowTrigger.xaml" />
+                <ResourceDictionary Source="/prototype;component/Themes/MainWindowImages.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

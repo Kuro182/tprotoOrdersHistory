@@ -1,0 +1,196 @@
+﻿<Window
+    x:Class="OrdersGrid.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:OrdersGrid"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="clr-namespace:OrdersGrid.ViewModels"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+
+    <Window.DataContext>
+        <viewModels:MainWindowViewModel />
+    </Window.DataContext>
+
+    <Grid Background="{DynamicResource linearGradient_mainBg}">
+        <TabControl x:Name="tabsControl" Style="{DynamicResource tabsControlStyle}">
+            <TabItem
+                x:Name="tabOpenOrder"
+                Header="Open Orders"
+                Style="{DynamicResource TabItemStyle1}">
+                <TabItem.Content>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="5px" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" Background="{DynamicResource ChartBackground}" />
+                        <Grid Grid.Row="1">
+                            
+                                <DataGrid x:Name="OpenOrdersDataGrid"
+                                CanUserAddRows="False"
+                                CanUserDeleteRows="False"        
+                                CellStyle="{DynamicResource DataGridCellStyle1}"
+                                CanUserResizeColumns="False"
+                                
+                                BorderThickness="0"
+                                CanUserResizeRows="False"                              
+                                AutoGenerateColumns="False"
+                                CanUserReorderColumns="False"
+                                ItemsSource="{Binding TradingHistory}"
+                                Style="{DynamicResource mainDataGridStyle}" RowStyle="{DynamicResource RowDataGridStyle}">
+                                <DataGrid.Columns>
+                                    <DataGridTemplateColumn MinWidth="90" HeaderStyle="{DynamicResource HeaderButtonStyle}">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                                <Button Style="{DynamicResource OrderManagerButtonStyle}" Content="Cancel"></Button>
+                                        </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+
+                                    </DataGridTemplateColumn>
+                                        <DataGridTextColumn
+                                        Width="*"
+                                        MinWidth="40"
+                                        Binding="{Binding Symbol}"
+                                        ElementStyle="{StaticResource Centering}"
+                                        Header="Pair"
+                                        IsReadOnly="True" />
+                                    <DataGridTextColumn
+                                        MinWidth="40"
+                                        Binding="{Binding Type}"
+                                        ElementStyle="{StaticResource Centering}"
+                                        Header="Type"
+                                        IsReadOnly="True" />
+                                    <DataGridTextColumn
+                                        MinWidth="40"
+                                        Binding="{Binding Side}"
+                                        ElementStyle="{StaticResource Centering}"
+                                        Header="Side"
+                                        IsReadOnly="True" />
+                                    <DataGridTextColumn
+                                        MinWidth="50"
+                                        Binding="{Binding Price}"
+                                        ElementStyle="{StaticResource Centering}"
+                                        Header="Price"
+                                        IsReadOnly="True" />
+                                    <DataGridTextColumn
+                                        Width="*"
+                                        MinWidth="40"
+                                        Binding="{Binding ExecutedQuantity}"
+                                        ElementStyle="{StaticResource Centering}"
+                                        Header="Amount"
+                                        IsReadOnly="True" />
+                                    <DataGridTextColumn
+                                        Width="*"
+                                        MinWidth="40"
+                                        Binding="{Binding OriginalQuantity}"
+                                        ElementStyle="{StaticResource Centering}"
+                                        Header="Total"
+                                        IsReadOnly="True" />
+                                    <DataGridTextColumn
+                                        Width="*"
+                                        MinWidth="40"
+                                        Binding="{Binding Time, StringFormat='HH:mm:ss   dd:MM:yyyy'}"
+                                        ElementStyle="{StaticResource Centering}"
+                                        Header="Time"
+                                        IsReadOnly="True" />
+                                </DataGrid.Columns>
+                            </DataGrid>
+                            
+                        </Grid>
+                    </Grid>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem
+                x:Name="tabTradeHistory"
+                Margin="1,0,-1,0"
+                Header="Trade History"
+                Style="{DynamicResource TabItemStyle1}">
+                <TabItem.Content>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="5px" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" />
+                        <Grid Grid.Row="1">
+                            <DataGrid x:Name="TradeHistoryDataGrid"
+                                AutoGenerateColumns="False"
+                                CanUserReorderColumns="False"
+                                CellStyle="{DynamicResource DataGridCellStyle1}"
+                                ItemsSource="{Binding TradingHistory}"
+                                Style="{DynamicResource mainDataGridStyle}" >
+                                <DataGrid.Columns>
+                                    <!--<DataGridTemplateColumn MinWidth="90">
+                                        <DataGridTemplateColumn.HeaderTemplate>
+                                            <DataTemplate>
+                                                <Button
+                                                    Width="80px"
+                                                    Height="20px"
+                                                    Panel.ZIndex="10"
+                                                    Content="Cancel All" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.HeaderTemplate>
+                                    </DataGridTemplateColumn>-->
+                                    <DataGridTextColumn
+                                        Width="*"
+                                        MinWidth="40"
+                                        Binding="{Binding Symbol}"
+                                        ElementStyle="{StaticResource Centering}"
+                                        Header="Pair"
+                                        IsReadOnly="True" />
+                                    <DataGridTextColumn
+                                        MinWidth="40"
+                                        Binding="{Binding Type}"
+                                        ElementStyle="{StaticResource Centering}"
+                                        Header="Type"
+                                        IsReadOnly="True" />
+                                    <DataGridTextColumn
+                                        MinWidth="40"
+                                        Binding="{Binding Side}"
+                                        ElementStyle="{StaticResource Centering}"
+                                        Header="Side"
+                                        IsReadOnly="True" />
+                                    <DataGridTextColumn
+                                        MinWidth="50"
+                                        Binding="{Binding Price}"
+                                        ElementStyle="{StaticResource Centering}"
+                                        Header="Price"
+                                        IsReadOnly="True" />
+                                    <DataGridTextColumn
+                                        Width="*"
+                                        MinWidth="40"
+                                        Binding="{Binding ExecutedQuantity}"
+                                        ElementStyle="{StaticResource Centering}"
+                                        Header="Amount"
+                                        IsReadOnly="True" />
+                                    <DataGridTextColumn
+                                        Width="*"
+                                        MinWidth="40"
+                                        Binding="{Binding OriginalQuantity}"
+                                        ElementStyle="{StaticResource Centering}"
+                                        Header="Total"
+                                        IsReadOnly="True" />
+                                    <DataGridTextColumn
+                                        Width="*"
+                                        MinWidth="40"
+                                        Binding="{Binding Time, StringFormat='HH:mm:ss   dd:MM:yyyy'}"
+                                        ElementStyle="{StaticResource Centering}"
+                                        Header="Time"
+                                        IsReadOnly="True" />
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                    </Grid>
+
+                </TabItem.Content>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+
+
+</Window>

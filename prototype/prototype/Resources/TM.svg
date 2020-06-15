@@ -1,0 +1,24 @@
+<svg id="Слой_1" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 10.6 30">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#Безымянный_градиент_352);
+      }
+
+      .cls-2 {
+        fill: url(#Безымянный_градиент_136);
+      }
+    </style>
+    <linearGradient id="Безымянный_градиент_352" data-name="Безымянный градиент 352" x1="5.31" y1="23.34" x2="5.12" y2="0.12" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2c2c36"/>
+      <stop offset="1" stop-color="#00b487"/>
+    </linearGradient>
+    <linearGradient id="Безымянный_градиент_136" data-name="Безымянный градиент 136" x1="5.43" y1="6.77" x2="5.43" y2="30.02" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2c2c36"/>
+      <stop offset="1" stop-color="#be005f"/>
+    </linearGradient>
+  </defs>
+  <title>TM</title>
+  <polygon class="cls-1" points="5.17 0 0 6.52 3.17 6.52 2.52 6.52 2.52 6.52 3.02 6.52 3.02 23.25 5.17 23.25 5.17 6.52 7.85 6.52 7.85 6.52 10.35 6.52 5.17 0"/>
+  <polygon class="cls-2" points="8.11 23.48 8.11 23.48 7.58 23.48 7.58 6.75 5.43 6.75 5.43 23.48 2.78 23.48 2.78 23.48 3.43 23.48 0.25 23.48 5.42 30 10.6 23.48 8.11 23.48"/>
+</svg>

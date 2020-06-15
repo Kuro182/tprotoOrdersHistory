@@ -1,0 +1,1710 @@
+﻿<Window
+    x:Class="prototype.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:prototype"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:vm="clr-namespace:prototype.ViewModels"
+    x:Name="LayoutRoot"
+    Width="{x:Static SystemParameters.PrimaryScreenWidth}"
+    Height="{x:Static SystemParameters.PrimaryScreenHeight}"
+    d:DataContext="{d:DesignInstance vm:MainWindowViewModel}"
+    Background="{StaticResource MainBackground}"
+    MouseLeftButtonDown="WindowMouseLeftButtonDown"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <!--  WindowState="Maximized"  -->
+
+    <x:Code>
+        <![CDATA[            
+        private void WindowMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
+    ]]>
+    </x:Code>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="34*" />
+            <RowDefinition Height="12*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="32*" />
+            <ColumnDefinition Width="98*" />
+            <ColumnDefinition Width="507*" />
+            <ColumnDefinition Width="128*" />
+        </Grid.ColumnDefinitions>
+
+        <!--  Top-Panel  -->
+        <!--  IconTerminal Panel  -->
+        <Grid
+            Grid.Row="0"
+            Grid.Column="0"
+            Margin="0,0,3,3.2"
+            Style="{StaticResource Style_id-1}" />
+        <!--  CoinName-Price Panel  -->
+        <Grid
+            Grid.Row="0"
+            Grid.ColumnSpan="4"
+            Margin="63,0,254.6,3.2"
+            Style="{StaticResource Style_id-2}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="3*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    <TextBlock Style="{DynamicResource StyleTextBlock_id-6}" Text="24h High:" />
+                </Grid>
+
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+                        <TextBlock Style="{DynamicResource StyleTextBlock_id-5}" Text="$Price" />
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <TextBlock
+                            Foreground="{DynamicResource GreenMainColor}"
+                            Style="{DynamicResource 24HighLowTextBlockStyle}"
+                            Text="{Binding SelectedSymbol.HighPrice}" />
+                    </Grid>
+
+                </Grid>
+
+            </Grid>
+            <Grid Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    <TextBlock Style="{DynamicResource StyleTextBlock_id-6}" Text="24h Low:" />
+                </Grid>
+
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+                        <TextBlock Style="{DynamicResource StyleTextBlock_id-5}" Text="$Price" />
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <TextBlock
+                            Foreground="{DynamicResource PinkMainColor}"
+                            Style="{DynamicResource 24HighLowTextBlockStyle}"
+                            Text="{Binding SelectedSymbol.LowPrice}" />
+                    </Grid>
+
+                </Grid>
+
+            </Grid>
+            <Grid Grid.Column="4" Grid.ColumnSpan="2">
+                <TextBlock Style="{DynamicResource StyleTextBlock_id-6_2}" Text="{Binding SelectedSymbolName}" />
+            </Grid>
+
+        </Grid>
+        <!--  RightTopButton Panel  -->
+        <Grid
+            Grid.Row="0"
+            Grid.Column="3"
+            Margin="4.4,0,-1.4,3.2"
+            Style="{StaticResource Style_id-3}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="123" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0" Grid.Column="0">
+                    <Button
+                        Width="Auto"
+                        Height="Auto"
+                        Background="{x:Null}"
+                        BorderBrush="{x:Null}"
+                        Foreground="{DynamicResource TextColorMain}">
+                        <materialDesign:PackIcon
+                            Width="15"
+                            Height="15"
+                            Margin="0,6,0,0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Kind="WindowMinimize" />
+                    </Button>
+                </Grid>
+
+                <Grid Grid.Row="0" Grid.Column="1">
+                    <Button
+                        Width="Auto"
+                        Height="Auto"
+                        Background="{x:Null}"
+                        BorderBrush="{x:Null}"
+                        Foreground="{DynamicResource TextColorMain}">
+                        <!--  Не активная кнопка  -->
+                        <materialDesign:PackIcon
+                            Width="15"
+                            Height="15"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Kind="Fullscreen" />
+
+                        <!--  Активная кнопка  -->
+                        <!--<materialDesign:PackIcon Kind="FullscreenExit" Height="20" Width="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>-->
+                    </Button>
+                </Grid>
+
+                <Grid Grid.Row="0" Grid.Column="2">
+                    <Button
+                        Width="Auto"
+                        Height="Auto"
+                        Background="{x:Null}"
+                        BorderBrush="{x:Null}"
+                        Command="{Binding CloseApp}"
+                        Foreground="{DynamicResource TextColorMain}">
+                        <materialDesign:PackIcon
+                            Width="15"
+                            Height="15"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Kind="Close" />
+                    </Button>
+                </Grid>
+
+            </Grid>
+
+        </Grid>
+
+
+        <!--  Center-Panel  -->
+        <!--  Left Panel  -->
+        <Grid
+            Grid.RowSpan="4"
+            Grid.Column="0"
+            Margin="0,35,3,-0.4"
+            Style="{StaticResource Style_id-4}" />
+
+        <!--  CoinList Panel  -->
+        <Grid
+            Grid.RowSpan="2"
+            Grid.ColumnSpan="2"
+            Margin="63,35,3,0.4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="27*" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Margin="0,0,0,3">
+                <!--  Кнопки поиска к паре  -->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="24*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="24*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="24*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    <Button
+                        Margin="0"
+                        Command="{Binding SortCoinlist}"
+                        CommandParameter="0"
+                        Content="BTC"
+                        Style="{DynamicResource StyleButton_id-1}" />
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Button
+                        Margin="0"
+                        Command="{Binding SortCoinlist}"
+                        CommandParameter="1"
+                        Content="ALTC"
+                        Style="{DynamicResource StyleButton_id-1}" />
+                </Grid>
+                <Grid Grid.Column="4">
+                    <Button
+                        Margin="0"
+                        Command="{Binding SortCoinlist}"
+                        CommandParameter="2"
+                        Content="USDT"
+                        Style="{DynamicResource StyleButton_id-1}" />
+                </Grid>
+
+            </Grid>
+
+            <Grid Grid.Row="1" Margin="0,0,0,3" />
+
+            <Grid Grid.Row="2">
+                <ListView
+                    Grid.Column="0"
+                    Margin="0,3,0,0"
+                    VerticalAlignment="Top"
+                    Background="{StaticResource Color_id-1}"
+                    BorderBrush="Transparent"
+                    BorderThickness="0"
+                    Foreground="{DynamicResource TextColorMain}"
+                    ItemsSource="{Binding AllPrices}"
+                    ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                    ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                    SelectedItem="{Binding SelectedSymbol}"
+                    SelectionMode="Single">
+                    <ListView.ItemTemplate>
+                        <DataTemplate DataType="ListViewItem">
+                            <Border
+                                Margin="2"
+                                Background="Transparent"
+                                BorderThickness="0">
+                                <Grid Width="180" Height="47">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Label
+                                        Grid.RowSpan="2"
+                                        Grid.Column="0"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Center"
+                                        Content="{Binding Symbol}"
+                                        Foreground="White" />
+                                    <Label
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Center"
+                                        Content="{Binding Price}"
+                                        Foreground="White" />
+                                    <Label
+                                        x:Name="PricePercentLabel"
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Center"
+                                        Content="{Binding PriceChangePercent, StringFormat={} {0:N2}%}"
+                                        FontSize="12"
+                                        Foreground="{StaticResource GreenMainColor}">
+                                        <Label.Style>
+                                            <Style>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding ElementName=PricePercentLabel, Path=IsMouseOver}" Value="True">
+                                                        <Setter Property="Label.Foreground" Value="{DynamicResource GreenMainColor}" />
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding ElementName=PricePercentLabel, Path=IsMouseOver}" Value="False">
+                                                        <Setter Property="Label.Foreground" Value="{DynamicResource PinkMainColor}" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Label.Style>
+                                    </Label>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+
+        </Grid>
+
+        <!--  Разметка Графика  -->
+        <Grid
+            Grid.RowSpan="2"
+            Grid.Column="2"
+            Grid.ColumnSpan="2"
+            Margin="8,35,254.6,0.4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="28*" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Margin="3,0,0,3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+
+                <!--  Кнопки ГРАФИКА  -->
+                <Grid Grid.Column="0">
+                    <Button
+                        Command="{Binding SetTimeRange}"
+                        CommandParameter="1"
+                        Content="Second"
+                        Style="{DynamicResource StyleButton_id-1}" />
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Button
+                        Command="{Binding SetTimeRange}"
+                        CommandParameter="60"
+                        Content="1m"
+                        Style="{DynamicResource StyleButton_id-1}" />
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Button
+                        Command="{Binding SetTimeRange}"
+                        CommandParameter="300"
+                        Content="5m"
+                        Style="{DynamicResource StyleButton_id-1}" />
+                </Grid>
+                <Grid Grid.Column="3">
+                    <Button
+                        Command="{Binding SetTimeRange}"
+                        CommandParameter="900"
+                        Content="15m"
+                        Style="{DynamicResource StyleButton_id-1}" />
+                </Grid>
+                <Grid Grid.Column="4">
+                    <Button
+                        Command="{Binding SetTimeRange}"
+                        CommandParameter="1800"
+                        Content="30m"
+                        Style="{DynamicResource StyleButton_id-1}" />
+                </Grid>
+                <Grid Grid.Column="5">
+                    <Button
+                        Command="{Binding SetTimeRange}"
+                        CommandParameter="3600"
+                        Content="1h"
+                        Style="{DynamicResource StyleButton_id-1}" />
+                </Grid>
+                <Grid Grid.Column="6">
+                    <Button
+                        Command="{Binding SetTimeRange}"
+                        CommandParameter="7200"
+                        Content="2h"
+                        Style="{DynamicResource StyleButton_id-1}" />
+                </Grid>
+                <Grid Grid.Column="7">
+                    <Button
+                        Command="{Binding SetTimeRange}"
+                        CommandParameter="14400"
+                        Content="4h"
+                        Style="{DynamicResource StyleButton_id-1}" />
+                </Grid>
+                <Grid Grid.Column="8">
+                    <Button
+                        Command="{Binding SetTimeRange}"
+                        CommandParameter="21600"
+                        Content="6h"
+                        Style="{DynamicResource StyleButton_id-1}" />
+                </Grid>
+                <Grid Grid.Column="9">
+                    <Button
+                        Command="{Binding SetTimeRange}"
+                        CommandParameter="43200"
+                        Content="12h"
+                        Style="{DynamicResource StyleButton_id-1}" />
+                </Grid>
+                <Grid Grid.Column="10">
+                    <Button
+                        Command="{Binding SetTimeRange}"
+                        CommandParameter="86400"
+                        Content="1d"
+                        Style="{DynamicResource StyleButton_id-1}" />
+                </Grid>
+                <Grid Grid.Column="11">
+                    <Button
+                        Command="{Binding SetTimeRange}"
+                        CommandParameter="604800"
+                        Content="1w"
+                        Style="{DynamicResource StyleButton_id-1}" />
+                </Grid>
+                <Grid Grid.Column="12">
+                    <Button
+                        Command="{Binding SetTimeRange}"
+                        CommandParameter="2592000"
+                        Content="1M"
+                        Style="{DynamicResource StyleButton_id-1}" />
+                </Grid>
+                <Grid Grid.Column="13" Style="{StaticResource StyleColor_id-2}" />
+                <Grid Grid.Column="14">
+                    <Button
+                        Command="{Binding BuySellCommand}"
+                        CommandParameter="0"
+                        Content="Buy"
+                        Foreground="{DynamicResource GreenMainColor}"
+                        Style="{DynamicResource StyleButton_id-1}" />
+                </Grid>
+                <Grid Grid.Column="15">
+                    <Button
+                        Command="{Binding BuySellCommand}"
+                        CommandParameter="1"
+                        Content="Sell"
+                        Foreground="{DynamicResource PinkMainColor}"
+                        Style="{DynamicResource StyleButton_id-1}" />
+                </Grid>
+                <Grid Grid.Column="16" Margin="0,0,3,0">
+                    <TextBox Style="{DynamicResource TextBox_id-1}" Text="{Binding DepositPercentOnBuying, Mode=TwoWay, StringFormat={}{F2}%}" />
+                </Grid>
+                <Grid Grid.Column="17" Style="{StaticResource StyleColor_id-1_10}" />
+
+
+            </Grid>
+
+            <!--  График  -->
+            <Grid
+                Grid.Row="1"
+                Grid.Column="2"
+                Margin="3,0,0,0"
+                Style="{StaticResource StyleColor_id-1}">
+                <telerik:RadCartesianChart>
+                    <telerik:RadCartesianChart.Behaviors>
+                        <telerik:ChartTrackBallBehavior />
+                        <telerik:ChartCrosshairBehavior />
+                        <telerik:ChartPanAndZoomBehavior PanMode="Both" ZoomMode="Both" />
+                    </telerik:RadCartesianChart.Behaviors>
+                    <telerik:RadCartesianChart.HorizontalAxis>
+                        <telerik:DateTimeContinuousAxis
+                            LabelInterval="1"
+                            MajorStep="30"
+                            MajorStepUnit="Second"
+                            SmartLabelsMode="SmartStep">
+                            <telerik:DateTimeContinuousAxis.LabelStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="Foreground" Value="{DynamicResource TextColorMain}" />
+                                </Style>
+                            </telerik:DateTimeContinuousAxis.LabelStyle>
+                        </telerik:DateTimeContinuousAxis>
+                    </telerik:RadCartesianChart.HorizontalAxis>
+                    <telerik:RadCartesianChart.VerticalAxis>
+                        <telerik:LinearAxis
+                            Foreground="{DynamicResource TextColorMain}"
+                            HorizontalLocation="Right"
+                            LineStroke="{DynamicResource TextColorMain}"
+                            LineThickness="1"
+                            SmartLabelsMode="SmartStepAndRange"
+                            TickOrigin="0">
+                            <telerik:LinearAxis.LabelStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="Foreground" Value="{DynamicResource TextColorMain}" />
+                                </Style>
+                            </telerik:LinearAxis.LabelStyle>
+                        </telerik:LinearAxis>
+                    </telerik:RadCartesianChart.VerticalAxis>
+                    <telerik:RadCartesianChart.Series>
+                        <!--<telerik:LineSeries
+                            ItemsSource="{Binding Klines}"
+                            ValueBinding="CurrentDayClosePrice"
+                            CategoryBinding="StatisticsCloseTime"
+                            >
+
+                        </telerik:LineSeries>-->
+                        <!--<telerik:ScatterPointSeries
+                            ItemsSource="{Binding SelectedSymbol.Orders}"
+                            YValueBinding="Price"
+                            XValueBinding="Time"
+                            >
+
+                        </telerik:ScatterPointSeries>-->
+                        <telerik:CandlestickSeries
+                            CategoryBinding="CloseTime"
+                            CloseBinding="Close"
+                            HighBinding="High"
+                            ItemsSource="{Binding Klines}"
+                            LowBinding="Low"
+                            OpenBinding="Open">
+                            <telerik:CandlestickSeries.DefaultVisualStyle>
+                                <Style TargetType="telerik:Candlestick">
+                                    <Setter Property="StrokeThickness" Value="1" />
+                                    <Setter Property="UpStroke" Value="{DynamicResource GreenMainColor}" />
+                                    <Setter Property="DownStroke" Value="{DynamicResource PinkMainColor}" />
+                                </Style>
+                            </telerik:CandlestickSeries.DefaultVisualStyle>
+                        </telerik:CandlestickSeries>
+                    </telerik:RadCartesianChart.Series>
+                </telerik:RadCartesianChart>
+            </Grid>
+
+        </Grid>
+
+        <!--  Разметка Стакан  -->
+        <Grid
+            Grid.RowSpan="2"
+            Grid.Column="3"
+            Margin="1.4,35,-1.4,0.4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="28*" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Style="{StaticResource Style_id-5}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <TextBlock Style="{StaticResource StyleTextBlock_id-1}" Text="Price" />
+                </Grid>
+                <Grid Grid.Column="1">
+                    <TextBlock Style="{StaticResource StyleTextBlock_id-1}" Text="Amount + CN" />
+                </Grid>
+                <Grid Grid.Column="2">
+                    <TextBlock Style="{StaticResource StyleTextBlock_id-1}" Text="Total" />
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="8*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="8*" />
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0" Margin="3,0,0,0">
+                    <telerik:RadCartesianChart
+                        Margin="-14,18,-16,12"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        Background="{DynamicResource PinkVerticalGradient}"
+                        HoverMode="FadeOtherSeries"
+                        RenderTransformOrigin="0.5,0.5">
+                        <telerik:RadCartesianChart.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform />
+                                <SkewTransform />
+                                <RotateTransform Angle="-90.265" />
+                                <TranslateTransform />
+                            </TransformGroup>
+                        </telerik:RadCartesianChart.RenderTransform>
+                        <telerik:RadCartesianChart.HorizontalAxis>
+                            <telerik:CategoricalAxis Visibility="Collapsed">
+                                <telerik:CategoricalAxis.LabelStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Foreground" Value="{DynamicResource TextColorMain}" />
+                                    </Style>
+                                </telerik:CategoricalAxis.LabelStyle>
+                            </telerik:CategoricalAxis>
+                        </telerik:RadCartesianChart.HorizontalAxis>
+                        <telerik:RadCartesianChart.VerticalAxis>
+                            <telerik:LinearAxis
+                                Foreground="{DynamicResource TextColorMain}"
+                                HorizontalLocation="Right"
+                                LineStroke="{DynamicResource TextColorMain}"
+                                LineThickness="1"
+                                SmartLabelsMode="SmartStepAndRange"
+                                TickOrigin="0"
+                                Visibility="Collapsed">
+                                <telerik:LinearAxis.LabelStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Foreground" Value="{DynamicResource TextColorMain}" />
+                                    </Style>
+                                </telerik:LinearAxis.LabelStyle>
+
+                            </telerik:LinearAxis>
+                        </telerik:RadCartesianChart.VerticalAxis>
+                        <telerik:RadCartesianChart.Series>
+                            <telerik:BarSeries>
+                                <telerik:BarSeries.DefaultVisualStyle>
+                                    <Style TargetType="Border">
+                                        <Setter Property="Background" Value="{DynamicResource PinkBarGradient}" />
+                                    </Style>
+                                </telerik:BarSeries.DefaultVisualStyle>
+                                <telerik:BarSeries.DataPoints>
+                                    <telerik:CategoricalDataPoint Category="January" Value="2" />
+                                    <telerik:CategoricalDataPoint Category="February" Value="5" />
+                                    <telerik:CategoricalDataPoint Category="March" Value="3" />
+                                    <telerik:CategoricalDataPoint Category="April" Value="10" />
+                                    <telerik:CategoricalDataPoint Category="May" Value="9" />
+                                    <telerik:CategoricalDataPoint Category="June" Value="7" />
+                                    <telerik:CategoricalDataPoint Category="July" Value="1" />
+                                </telerik:BarSeries.DataPoints>
+                            </telerik:BarSeries>
+                        </telerik:RadCartesianChart.Series>
+                    </telerik:RadCartesianChart>
+                </Grid>
+
+                <Grid Grid.Row="2" Margin="3,0,0,0">
+                    <telerik:RadCartesianChart
+                        Margin="-14,18,-16,12"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        Background="{DynamicResource GreenVerticalGradient}"
+                        HoverMode="FadeOtherSeries"
+                        RenderTransformOrigin="0.5,0.5">
+                        <telerik:RadCartesianChart.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform />
+                                <SkewTransform />
+                                <RotateTransform Angle="-90.265" />
+                                <TranslateTransform />
+                            </TransformGroup>
+                        </telerik:RadCartesianChart.RenderTransform>
+                        <telerik:RadCartesianChart.HorizontalAxis>
+                            <telerik:CategoricalAxis Visibility="Collapsed">
+                                <telerik:CategoricalAxis.LabelStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Foreground" Value="{DynamicResource TextColorMain}" />
+                                    </Style>
+                                </telerik:CategoricalAxis.LabelStyle>
+                            </telerik:CategoricalAxis>
+                        </telerik:RadCartesianChart.HorizontalAxis>
+                        <telerik:RadCartesianChart.VerticalAxis>
+                            <telerik:LinearAxis
+                                Foreground="{DynamicResource TextColorMain}"
+                                HorizontalLocation="Right"
+                                LineStroke="{DynamicResource TextColorMain}"
+                                LineThickness="1"
+                                SmartLabelsMode="SmartStepAndRange"
+                                TickOrigin="0"
+                                Visibility="Collapsed">
+                                <telerik:LinearAxis.LabelStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Foreground" Value="{DynamicResource TextColorMain}" />
+                                    </Style>
+                                </telerik:LinearAxis.LabelStyle>
+
+                            </telerik:LinearAxis>
+                        </telerik:RadCartesianChart.VerticalAxis>
+                        <telerik:RadCartesianChart.Series>
+                            <telerik:BarSeries>
+                                <telerik:BarSeries.DefaultVisualStyle>
+                                    <Style TargetType="Border">
+                                        <Setter Property="Background" Value="{DynamicResource GreenBarGradient}" />
+                                    </Style>
+                                </telerik:BarSeries.DefaultVisualStyle>
+                                <telerik:BarSeries.DataPoints>
+                                    <telerik:CategoricalDataPoint Category="January" Value="2" />
+                                    <telerik:CategoricalDataPoint Category="February" Value="5" />
+                                    <telerik:CategoricalDataPoint Category="March" Value="3" />
+                                    <telerik:CategoricalDataPoint Category="April" Value="10" />
+                                    <telerik:CategoricalDataPoint Category="May" Value="9" />
+                                    <telerik:CategoricalDataPoint Category="June" Value="7" />
+                                    <telerik:CategoricalDataPoint Category="July" Value="1" />
+                                </telerik:BarSeries.DataPoints>
+                            </telerik:BarSeries>
+                        </telerik:RadCartesianChart.Series>
+                    </telerik:RadCartesianChart>
+                </Grid>
+
+                <Grid Grid.Row="1" Style="{StaticResource Style_id-7}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="4*" />
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0" Margin="10,0,0,0">
+                        <DockPanel>
+                            <TextBlock Style="{DynamicResource StyleTextBlock_id-4}" Text="0.000000000" />
+                            <!--  10 Значений  -->
+                            <materialDesign:PackIcon
+                                Width="Auto"
+                                Height="Auto"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center"
+                                Foreground="{DynamicResource Color_id-12}"
+                                Kind="ArrowDropUp" />
+                        </DockPanel>
+
+                        <!--<TextBlock Text="0.000000000" Style="{DynamicResource StyleTextBlock_id-4_1}"/>-->
+                        <!--<materialDesign:PackIcon Kind="ArrowDropDown"
+                                                 Foreground="{DynamicResource Color_id-12_1}"
+                                                 Height="Auto"
+                                                 Width="Auto"
+                                                 HorizontalAlignment="Right"
+                                                 VerticalAlignment="Center"/>-->
+                    </Grid>
+
+                    <Grid Grid.Column="1">
+                        <TextBlock Style="{DynamicResource StyleTextBlock_id-5}" Text="$Price" />
+                    </Grid>
+
+                    <Grid Grid.Column="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0">
+                            <TextBlock Style="{DynamicResource StyleTextBlock_id-6}" Text="24 Volume" />
+                        </Grid>
+
+                        <Grid Grid.Row="1">
+                            <TextBlock Style="{DynamicResource StyleTextBlock_id-6}" Text="Volume" />
+                        </Grid>
+
+                    </Grid>
+
+                </Grid>
+
+            </Grid>
+
+        </Grid>
+
+        <!--  Trade Panel  -->
+        <Grid
+            Grid.Row="2"
+            Grid.ColumnSpan="4"
+            Margin="63,2.6,254.6,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0" Margin="0,0,3,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="7*" />
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0" Style="{StaticResource StyleColor_id-1_8}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="4*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="4*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="1">
+                            <Button
+                                Width="Auto"
+                                Height="Auto"
+                                Background="{x:Null}"
+                                BorderBrush="{x:Null}"
+                                Foreground="{DynamicResource TextColorMain}">
+                                <materialDesign:PackIcon
+                                    Width="Auto"
+                                    Height="Auto"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Kind="KeyboardArrowLeft" />
+                            </Button>
+                        </Grid>
+
+                        <Grid Grid.Column="2">
+                            <TextBlock Width="Auto" Height="Auto" />
+                        </Grid>
+
+                        <Grid Grid.Column="3">
+                            <Button
+                                Width="Auto"
+                                Height="Auto"
+                                Background="{x:Null}"
+                                BorderBrush="{x:Null}"
+                                Foreground="{DynamicResource TextColorMain}">
+                                <materialDesign:PackIcon
+                                    Width="Auto"
+                                    Height="Auto"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Kind="KeyboardArrowRight" />
+                            </Button>
+                        </Grid>
+
+                    </Grid>
+
+                    <Grid Grid.Row="1" Style="{StaticResource StyleColor_id-1}">
+                        <Grid>
+                            <TabControl
+                                x:Name="products2"
+                                Style="{StaticResource StyleColor_id-1_9}"
+                                TabStripPlacement="Right">
+                                <TabItem x:Name="History1" Style="{DynamicResource StyleButton_id-2}">
+                                    <TabItem.Header>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock
+                                                Padding="3,5"
+                                                Style="{StaticResource StyleTextBlock_id-1}"
+                                                Text="Open Orders" />
+                                        </StackPanel>
+                                    </TabItem.Header>
+
+                                    <!--  Button  -->
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="6*" />
+                                        </Grid.RowDefinitions>
+
+                                        <Grid Grid.Row="0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="5*" />
+                                                <ColumnDefinition Width="8*" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <Grid Grid.Column="1" Margin="0,3">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+
+                                                <Grid Grid.Column="0" Margin="0,0,3,0">
+                                                    <Button Style="{DynamicResource StyleButton_id-4}" />
+                                                </Grid>
+
+                                                <Grid Grid.Column="1" Margin="0,0,3,0">
+                                                    <Button Style="{DynamicResource StyleButton_id-4}" />
+                                                </Grid>
+
+                                                <Grid Grid.Column="2" Margin="0,0,3,0">
+                                                    <Button Style="{DynamicResource StyleButton_id-4}" />
+                                                </Grid>
+
+                                            </Grid>
+                                        </Grid>
+
+                                        <Grid Grid.Row="1" Style="{StaticResource StyleColor_id-10}">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <Grid Grid.Column="1">
+                                                <TextBlock Style="{StaticResource StyleTextBlock_id-1}" Text="Pair" />
+                                            </Grid>
+                                            <Grid Grid.Column="2">
+                                                <TextBlock Style="{StaticResource StyleTextBlock_id-1}" Text="Type" />
+                                            </Grid>
+                                            <Grid Grid.Column="3">
+                                                <TextBlock Style="{StaticResource StyleTextBlock_id-1}" Text="Side" />
+                                            </Grid>
+                                            <Grid Grid.Column="4">
+                                                <TextBlock Style="{StaticResource StyleTextBlock_id-1}" Text="Price" />
+                                            </Grid>
+                                            <Grid Grid.Column="5">
+                                                <TextBlock Style="{StaticResource StyleTextBlock_id-1}" Text="Amount" />
+                                            </Grid>
+                                            <Grid Grid.Column="6">
+                                                <TextBlock Style="{StaticResource StyleTextBlock_id-1}" Text="Total" />
+                                            </Grid>
+                                            <Grid Grid.Column="7">
+                                                <TextBlock Style="{StaticResource StyleTextBlock_id-1}" Text="Time" />
+                                            </Grid>
+                                            <Grid Grid.Column="8">
+                                                <TextBlock Style="{StaticResource StyleTextBlock_id-1}" Text="Filled" />
+                                            </Grid>
+
+                                        </Grid>
+
+                                        <Grid Grid.Row="2" />
+
+                                    </Grid>
+                                </TabItem>
+                                <TabItem x:Name="History2" Style="{DynamicResource StyleButton_id-2}">
+                                    <TabItem.Header>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock
+                                                Padding="3,5"
+                                                Style="{StaticResource StyleTextBlock_id-1}"
+                                                Text="Trade History" />
+                                        </StackPanel>
+                                    </TabItem.Header>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="7*" />
+                                        </Grid.RowDefinitions>
+
+                                        <Grid Grid.Row="0" Style="{StaticResource StyleColor_id-10}">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <Grid Grid.Column="0">
+                                                <TextBlock Style="{StaticResource StyleTextBlock_id-1}" Text="Time" />
+                                            </Grid>
+                                            <Grid Grid.Column="1">
+                                                <TextBlock Style="{StaticResource StyleTextBlock_id-1}" Text="Type" />
+                                            </Grid>
+                                            <Grid Grid.Column="2">
+                                                <TextBlock Style="{StaticResource StyleTextBlock_id-1}" Text="Pair" />
+                                            </Grid>
+                                            <Grid Grid.Column="3">
+                                                <TextBlock Style="{StaticResource StyleTextBlock_id-1}" Text="Price" />
+                                            </Grid>
+                                            <Grid Grid.Column="4">
+                                                <TextBlock Style="{StaticResource StyleTextBlock_id-1}" Text="Filled" />
+                                            </Grid>
+                                            <Grid Grid.Column="5">
+                                                <TextBlock Style="{StaticResource StyleTextBlock_id-1}" Text="Total" />
+                                            </Grid>
+                                            <Grid Grid.Column="6">
+                                                <TextBlock Style="{StaticResource StyleTextBlock_id-1}" Text="Fee" />
+                                            </Grid>
+
+                                        </Grid>
+
+                                    </Grid>
+                                </TabItem>
+                                <TabItem x:Name="History3" Style="{DynamicResource StyleButton_id-2}">
+                                    <TabItem.Header>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock
+                                                Padding="3,5"
+                                                Style="{StaticResource StyleTextBlock_id-1}"
+                                                Text="Order History" />
+                                        </StackPanel>
+                                    </TabItem.Header>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="7*" />
+                                        </Grid.RowDefinitions>
+
+                                        <Grid Grid.Row="0" Style="{StaticResource StyleColor_id-10}">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <Grid Grid.Column="0">
+                                                <TextBlock Style="{StaticResource StyleTextBlock_id-1}" Text="Time" />
+                                            </Grid>
+                                            <Grid Grid.Column="1">
+                                                <TextBlock Style="{StaticResource StyleTextBlock_id-1}" Text="Pair" />
+                                            </Grid>
+                                            <Grid Grid.Column="2">
+                                                <TextBlock Style="{StaticResource StyleTextBlock_id-1}" Text="Type" />
+                                            </Grid>
+                                            <Grid Grid.Column="3">
+                                                <TextBlock Style="{StaticResource StyleTextBlock_id-1}" Text="Side" />
+                                            </Grid>
+                                            <Grid Grid.Column="4">
+                                                <TextBlock Style="{StaticResource StyleTextBlock_id-1}" Text="Average" />
+                                            </Grid>
+                                            <Grid Grid.Column="5">
+                                                <TextBlock Style="{StaticResource StyleTextBlock_id-1}" Text="Price" />
+                                            </Grid>
+                                            <Grid Grid.Column="6">
+                                                <TextBlock Style="{StaticResource StyleTextBlock_id-1}" Text="Filled" />
+                                            </Grid>
+                                            <Grid Grid.Column="7">
+                                                <TextBlock Style="{StaticResource StyleTextBlock_id-1}" Text="Amount" />
+                                            </Grid>
+                                        </Grid>
+                                    </Grid>
+                                </TabItem>
+                            </TabControl>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Column="1">
+                <!--  Buy-Sell Panel  -->
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="7*" />
+                    </Grid.RowDefinitions>
+
+                    <!--  Свап панель  -->
+                    <Grid Grid.Row="0" Style="{StaticResource StyleColor_id-1_7}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="1">
+                            <Button
+                                Width="Auto"
+                                Height="Auto"
+                                Background="{x:Null}"
+                                BorderBrush="{x:Null}"
+                                Foreground="{DynamicResource TextColorMain}">
+                                <materialDesign:PackIcon
+                                    Width="Auto"
+                                    Height="Auto"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    BorderBrush="{DynamicResource Color_id-12}"
+                                    Kind="KeyboardArrowLeft" />
+                            </Button>
+                        </Grid>
+
+                        <Grid Grid.Column="2">
+                            <TextBlock Width="Auto" Height="Auto" />
+                        </Grid>
+
+                        <Grid Grid.Column="3">
+                            <Button
+                                Width="Auto"
+                                Height="Auto"
+                                Background="{x:Null}"
+                                BorderBrush="{x:Null}"
+                                Foreground="{DynamicResource TextColorMain}">
+                                <materialDesign:PackIcon
+                                    Width="Auto"
+                                    Height="Auto"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Kind="KeyboardArrowRight" />
+                            </Button>
+                        </Grid>
+
+                    </Grid>
+
+                    <!--  Таб контрол Покупок - Продаж  -->
+                    <Grid Grid.Row="1" Style="{StaticResource StyleColor_id-1}">
+                        <Grid>
+                            <TabControl
+                                x:Name="products1"
+                                Style="{StaticResource StyleColor_id-1_9}"
+                                TabStripPlacement="Right">
+                                <TabItem x:Name="Market1" Style="{DynamicResource StyleButton_id-2}">
+                                    <TabItem.Header>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock
+                                                Padding="3,5"
+                                                Style="{StaticResource StyleTextBlock_id-1}"
+                                                Text="Limit" />
+                                        </StackPanel>
+                                    </TabItem.Header>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="1.5*" />
+                                        </Grid.RowDefinitions>
+
+                                        <!--  Первая линия  -->
+                                        <Grid Grid.Row="0" Grid.Column="0">
+                                            <DockPanel>
+                                                <TextBlock Style="{DynamicResource StyleTextBlock_id-2}" Text="BTC Balance:" />
+                                                <TextBlock Style="{StaticResource StyleTextBlock_id-3}" Text="" />
+                                            </DockPanel>
+                                        </Grid>
+                                        <Grid Grid.Row="0" Grid.Column="1">
+                                            <DockPanel>
+                                                <TextBlock Style="{DynamicResource StyleTextBlock_id-2}" Text="USDT Balance:" />
+                                                <TextBlock Style="{StaticResource StyleTextBlock_id-3}" Text="" />
+                                            </DockPanel>
+                                        </Grid>
+
+                                        <!--  Вторая линия  -->
+                                        <Grid
+                                            Grid.Row="1"
+                                            Grid.Column="0"
+                                            Grid.ColumnSpan="2">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="2*" />
+                                                <ColumnDefinition Width="9*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <Grid Grid.Column="1" Margin="0,0,0,2">
+                                                <Button Content="Buy" Style="{DynamicResource StyleButton_id-3}" />
+                                            </Grid>
+
+                                        </Grid>
+
+                                        <!--  Третья линия  -->
+                                        <Grid
+                                            Grid.Row="2"
+                                            Grid.Column="0"
+                                            Grid.ColumnSpan="2">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="2*" />
+                                                <ColumnDefinition Width="9*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <Grid Grid.Column="0">
+                                                <TextBlock
+                                                    HorizontalAlignment="Center"
+                                                    Style="{DynamicResource StyleTextBlock_id-2}"
+                                                    Text="Price:" />
+                                            </Grid>
+
+                                            <Grid Grid.Column="1" Margin="0,0,0,2">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="7*" />
+                                                    <ColumnDefinition Width="2*" />
+                                                </Grid.ColumnDefinitions>
+                                                <Grid Grid.Column="0">
+                                                    <TextBox Style="{DynamicResource TextBox_id-1}" />
+                                                </Grid>
+                                                <Grid Grid.Column="1">
+                                                    <Border Style="{StaticResource StyleColor_id-9}" />
+                                                    <TextBlock Style="{StaticResource StyleTextBlock_id-1}" Text="Name" />
+                                                </Grid>
+                                            </Grid>
+
+                                        </Grid>
+
+                                        <!--  Четвертая линия  -->
+                                        <Grid
+                                            Grid.Row="3"
+                                            Grid.Column="0"
+                                            Grid.ColumnSpan="2">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="2*" />
+                                                <ColumnDefinition Width="9*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <Grid Grid.Column="0">
+                                                <TextBlock
+                                                    HorizontalAlignment="Center"
+                                                    Style="{DynamicResource StyleTextBlock_id-2}"
+                                                    Text="Amount:" />
+                                            </Grid>
+
+                                            <Grid Grid.Column="1" Margin="0,0,0,2">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="7*" />
+                                                    <ColumnDefinition Width="2*" />
+                                                </Grid.ColumnDefinitions>
+                                                <Grid Grid.Column="0">
+                                                    <TextBox Style="{DynamicResource TextBox_id-1}" />
+                                                </Grid>
+                                                <Grid Grid.Column="1">
+                                                    <Border Style="{StaticResource StyleColor_id-9}" />
+                                                    <TextBlock Style="{StaticResource StyleTextBlock_id-1}" Text="NameC" />
+                                                </Grid>
+                                            </Grid>
+                                        </Grid>
+
+                                        <!--  Пятая линия  -->
+                                        <Grid
+                                            Grid.Row="4"
+                                            Grid.Column="0"
+                                            Grid.ColumnSpan="2">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="2*" />
+                                                <ColumnDefinition Width="9*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <Grid Grid.Column="1" Margin="0,0,0,2">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+
+                                                <Grid Grid.Column="0">
+                                                    <Button Content="25%" Style="{DynamicResource StyleButton_id-1}" />
+                                                </Grid>
+
+                                                <Grid Grid.Column="1">
+                                                    <Button Content="50%" Style="{DynamicResource StyleButton_id-1}" />
+                                                </Grid>
+
+                                                <Grid Grid.Column="2">
+                                                    <Button Content="75%" Style="{DynamicResource StyleButton_id-1}" />
+                                                </Grid>
+
+                                                <Grid Grid.Column="3">
+                                                    <Button
+                                                        Margin="0"
+                                                        Content="100%"
+                                                        Style="{DynamicResource StyleButton_id-1}" />
+                                                </Grid>
+
+                                            </Grid>
+
+                                        </Grid>
+
+                                        <!--  Шестая линия  -->
+                                        <Grid
+                                            Grid.Row="5"
+                                            Grid.Column="0"
+                                            Grid.ColumnSpan="2">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="2*" />
+                                                <ColumnDefinition Width="9*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <Grid Grid.Column="1" Margin="0,0,0,2">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+
+                                                <Grid Grid.Column="0">
+                                                    <TextBox
+                                                        Margin="0,0,3,0"
+                                                        Style="{DynamicResource TextBox_id-1}"
+                                                        Text="%" />
+                                                </Grid>
+
+                                                <Grid Grid.Column="1">
+                                                    <TextBox Style="{DynamicResource TextBox_id-1}" Text="Total:" />
+                                                </Grid>
+
+                                            </Grid>
+
+                                        </Grid>
+
+                                        <!--  Пятая линия  -->
+                                        <Grid
+                                            Grid.Row="6"
+                                            Grid.RowSpan="2"
+                                            Grid.Column="0"
+                                            Grid.ColumnSpan="2">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="2*" />
+                                                <ColumnDefinition Width="9*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <Grid Grid.Column="1" Margin="0,2">
+                                                <Button
+                                                    Width="Auto"
+                                                    Height="Auto"
+                                                    Background="{DynamicResource GreenMainColor}"
+                                                    BorderThickness="0" />
+                                            </Grid>
+
+                                        </Grid>
+
+                                    </Grid>
+                                </TabItem>
+                                <TabItem x:Name="Market2" Style="{DynamicResource StyleButton_id-2}">
+                                    <TabItem.Header>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock
+                                                Padding="3,5"
+                                                Style="{StaticResource StyleTextBlock_id-1}"
+                                                Text="Market" />
+                                        </StackPanel>
+                                    </TabItem.Header>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="1.7*" />
+
+                                        </Grid.RowDefinitions>
+
+                                        <!--  Первая линия  -->
+                                        <Grid Grid.Row="0" Grid.Column="0">
+                                            <DockPanel>
+                                                <TextBlock Style="{DynamicResource StyleTextBlock_id-2}" Text="BTC Balance:" />
+                                                <TextBlock Style="{StaticResource StyleTextBlock_id-3}" Text="" />
+                                            </DockPanel>
+                                        </Grid>
+                                        <Grid Grid.Row="0" Grid.Column="1">
+                                            <DockPanel>
+                                                <TextBlock Style="{DynamicResource StyleTextBlock_id-2}" Text="USDT Balance:" />
+                                                <TextBlock Style="{StaticResource StyleTextBlock_id-3}" Text="" />
+                                            </DockPanel>
+                                        </Grid>
+
+                                        <!--  Вторая линия  -->
+                                        <Grid
+                                            Grid.Row="1"
+                                            Grid.Column="0"
+                                            Grid.ColumnSpan="2">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="2*" />
+                                                <ColumnDefinition Width="9*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <Grid Grid.Column="1" Margin="0,0,0,2">
+                                                <Button Content="Buy" Style="{DynamicResource StyleButton_id-3}" />
+                                            </Grid>
+
+                                        </Grid>
+
+                                        <!--  Четвертая линия  -->
+                                        <Grid
+                                            Grid.Row="2"
+                                            Grid.Column="0"
+                                            Grid.ColumnSpan="2">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="2*" />
+                                                <ColumnDefinition Width="9*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <Grid Grid.Column="0">
+                                                <TextBlock
+                                                    HorizontalAlignment="Center"
+                                                    Style="{DynamicResource StyleTextBlock_id-2}"
+                                                    Text="Amount:" />
+                                            </Grid>
+
+                                            <Grid Grid.Column="1" Margin="0,0,0,2">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="7*" />
+                                                    <ColumnDefinition Width="2*" />
+                                                </Grid.ColumnDefinitions>
+                                                <Grid Grid.Column="0">
+                                                    <TextBox Style="{DynamicResource TextBox_id-1}" />
+                                                </Grid>
+                                                <Grid Grid.Column="1">
+                                                    <Border Style="{StaticResource StyleColor_id-9}" />
+                                                    <TextBlock Style="{StaticResource StyleTextBlock_id-1}" Text="NameC" />
+                                                </Grid>
+                                            </Grid>
+                                        </Grid>
+
+                                        <!--  Пятая линия  -->
+                                        <Grid
+                                            Grid.Row="3"
+                                            Grid.Column="0"
+                                            Grid.ColumnSpan="2">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="2*" />
+                                                <ColumnDefinition Width="9*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <Grid Grid.Column="1" Margin="0,0,0,2">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+
+                                                <Grid Grid.Column="0">
+                                                    <Button Content="25%" Style="{DynamicResource StyleButton_id-1}" />
+                                                </Grid>
+
+                                                <Grid Grid.Column="1">
+                                                    <Button Content="50%" Style="{DynamicResource StyleButton_id-1}" />
+                                                </Grid>
+
+                                                <Grid Grid.Column="2">
+                                                    <Button Content="75%" Style="{DynamicResource StyleButton_id-1}" />
+                                                </Grid>
+
+                                                <Grid Grid.Column="3">
+                                                    <Button
+                                                        Margin="0"
+                                                        Content="100%"
+                                                        Style="{DynamicResource StyleButton_id-1}" />
+                                                </Grid>
+
+                                            </Grid>
+
+                                        </Grid>
+
+                                        <!--  Шестая линия  -->
+                                        <Grid
+                                            Grid.Row="4"
+                                            Grid.Column="0"
+                                            Grid.ColumnSpan="2">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="2*" />
+                                                <ColumnDefinition Width="9*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <Grid Grid.Column="1" Margin="0,0,0,2">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+
+                                                <Grid Grid.Column="0">
+                                                    <TextBox
+                                                        Margin="0,0,3,0"
+                                                        Style="{DynamicResource TextBox_id-1}"
+                                                        Text="%" />
+                                                </Grid>
+
+                                                <Grid Grid.Column="1">
+                                                    <TextBox Style="{DynamicResource TextBox_id-1}" Text="Total:" />
+                                                </Grid>
+
+                                            </Grid>
+
+                                        </Grid>
+
+                                        <!--  Седьмая линия  -->
+                                        <Grid
+                                            Grid.Row="5"
+                                            Grid.Column="0"
+                                            Grid.ColumnSpan="2">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="2*" />
+                                                <ColumnDefinition Width="9*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <Grid Grid.Column="1" Margin="0,0,0,2">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*" />
+                                                    <RowDefinition Height="4*" />
+                                                    <RowDefinition Height="*" />
+                                                </Grid.RowDefinitions>
+
+                                                <Grid Grid.Row="1">
+                                                    <Button
+                                                        Width="Auto"
+                                                        Height="Auto"
+                                                        Background="{DynamicResource GreenMainColor}"
+                                                        BorderThickness="0" />
+                                                </Grid>
+
+                                            </Grid>
+
+                                        </Grid>
+                                    </Grid>
+                                </TabItem>
+                                <TabItem x:Name="Market3" Style="{DynamicResource StyleButton_id-2}">
+                                    <TabItem.Header>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock
+                                                Padding="3,5"
+                                                Style="{StaticResource StyleTextBlock_id-1}"
+                                                Text="Stop-Limit" />
+                                        </StackPanel>
+                                    </TabItem.Header>
+                                    <Grid />
+                                </TabItem>
+                                <TabItem x:Name="Market4" Style="{DynamicResource StyleButton_id-2}">
+                                    <TabItem.Header>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock
+                                                Padding="3,5"
+                                                Style="{StaticResource StyleTextBlock_id-1}"
+                                                Text="Stop-Limit Profit" />
+                                        </StackPanel>
+                                    </TabItem.Header>
+                                    <Grid />
+                                </TabItem>
+                            </TabControl>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <!--  Coin History  -->
+        <Grid
+            Grid.Row="2"
+            Grid.Column="3"
+            Margin="4.4,2.6,-1.4,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="7*" />
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="1" Style="{StaticResource StyleColor_id-1}" />
+
+                <Grid Grid.Row="0" Style="{StaticResource StyleColor_id-1_6}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <TextBlock Style="{StaticResource StyleTextBlock_id-1}" Text="Price" />
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <TextBlock Style="{StaticResource StyleTextBlock_id-1}" Text="CoinName" />
+                    </Grid>
+                    <Grid Grid.Column="2">
+                        <TextBlock Style="{StaticResource StyleTextBlock_id-1}" Text="Time" />
+                    </Grid>
+
+                </Grid>
+            </Grid>
+        </Grid>
+
+
+
+        <!--  Нижние панели  -->
+        <Grid
+            Grid.Row="3"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Margin="0,3,3,-0.4"
+            Style="{StaticResource StyleColor_id-1_1}" />
+        <Grid
+            Grid.Row="3"
+            Grid.Column="2"
+            Grid.ColumnSpan="2"
+            Margin="8,3,-1.4,-0.4"
+            Style="{StaticResource StyleColor_id-1_1}" />
+
+    </Grid>
+</Window>
+
+
+
+
+<!--<Grid  Style="{StaticResource StyleBackgroundGraphColor}">
+        <telerik:RadCartesianChart>
+            <telerik:RadCartesianChart.Behaviors>
+                <telerik:ChartTrackBallBehavior/>
+                <telerik:ChartCrosshairBehavior/>
+                <telerik:ChartPanAndZoomBehavior
+                        PanMode="Both"
+                        ZoomMode="Both"
+                        />
+            </telerik:RadCartesianChart.Behaviors>
+            <telerik:RadCartesianChart.HorizontalAxis>
+                <telerik:DateTimeContinuousAxis
+                    SmartLabelsMode="SmartStep"
+                    LabelInterval="1"
+                    MajorStepUnit="Millisecond"
+                    MajorStep="30"
+                    >
+                    <telerik:DateTimeContinuousAxis.LabelStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Foreground" Value="White"/>
+                        </Style>
+                    </telerik:DateTimeContinuousAxis.LabelStyle>
+                </telerik:DateTimeContinuousAxis>
+            </telerik:RadCartesianChart.HorizontalAxis>
+            <telerik:RadCartesianChart.VerticalAxis>
+                <telerik:LinearAxis
+                    Foreground="White"
+                    LineStroke="White"
+                    SmartLabelsMode="SmartStepAndRange"
+                    LineThickness="1"
+
+                    >
+                    <telerik:LinearAxis.LabelStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Foreground" Value="Red"/>
+                        </Style>
+                    </telerik:LinearAxis.LabelStyle>
+                </telerik:LinearAxis>
+            </telerik:RadCartesianChart.VerticalAxis>
+            <telerik:RadCartesianChart.Series>-->
+<!--<telerik:CandlestickSeries
+                                                ItemsSource="{Binding Klines}"
+                                                CategoryBinding="CloseTime"
+                                                OpenBinding="Open"
+                                                CloseBinding="Close"
+                                                LowBinding="Low"
+                                                HighBinding="High"
+                                                >
+                    <telerik:CandlestickSeries.DefaultVisualStyle>
+                        <Style TargetType="telerik:Candlestick">
+                            <Setter Property="MinHeight" Value="1"/>
+                            <Setter Property="StrokeThickness" Value="1"/>
+                            <Setter Property="UpStroke" Value="GreenYellow"/>
+                            <Setter Property="DownStroke" Value="Red"/>
+                        </Style>
+                    </telerik:CandlestickSeries.DefaultVisualStyle>
+                </telerik:CandlestickSeries>-->
+<!--
+                <telerik:LineSeries
+                        ItemsSource="{Binding StreamData}"
+                        ValueBinding="Price"
+                        CategoryBinding="Time"
+                    Stroke="White"
+                    >
+
+                </telerik:LineSeries>
+            </telerik:RadCartesianChart.Series>-->
+<!--<telerik:RadCartesianChart.SeriesProvider>
+                <telerik:ChartSeriesProvider x:Name="SeriesProvider" Source="{Binding Path=StreamData, Mode=OneWay}">
+                    <telerik:ChartSeriesProvider.SeriesDescriptors>
+                        <telerik:ChartSeriesDescriptor>
+                            <telerik:ChartSeriesDescriptor.Style>
+                                <Style TargetType="telerik:LineSeries">
+                                    <Setter Property="Stroke" Value="Pink" />
+                                    <Setter Property="ValueBinding" Value="Price" />
+                                    <Setter Property="CategoryBinding" Value="Time" />
+                                    <Setter Property="StrokeThickness" Value="1" />
+                                    <Setter Property="HorizontalAxis" Value="{Binding HorizontalAxis, ElementName=TotalBalancesChart}" />
+                                    <Setter Property="LegendSettings">
+                                        <Setter.Value>
+                                            <telerik:SeriesLegendSettings />
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </telerik:ChartSeriesDescriptor.Style>
+                        </telerik:ChartSeriesDescriptor>
+                    </telerik:ChartSeriesProvider.SeriesDescriptors>
+                </telerik:ChartSeriesProvider>
+            </telerik:RadCartesianChart.SeriesProvider>-->
+<!--
+        </telerik:RadCartesianChart>
+    </Grid>-->

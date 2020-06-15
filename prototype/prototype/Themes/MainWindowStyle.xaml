@@ -1,0 +1,463 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- StaticShadow -->
+    <DropShadowEffect x:Key="CShadow" Color="Black" Direction="280" ShadowDepth="6" BlurRadius="6" Opacity="0.3"/>
+
+    <Style x:Key="Shadow">
+        <Setter Property="Button.Effect">
+            <Setter.Value>
+                <DropShadowEffect Color="Black" Direction="280" ShadowDepth="6" BlurRadius="6" Opacity="0.3"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Text -->
+    <Style x:Key="TextStyle">
+        <Setter Property="Control.Foreground" Value="{StaticResource TextColorMain}"/>
+        <Setter Property="Control.FontSize" Value="12"/>
+    </Style>
+
+    <!-- TextBlockStyle -->
+    <Style x:Key="StyleTextBlock_id-1" BasedOn="{StaticResource Shadow}">
+        <Setter Property="Control.Background" Value="Transparent"/>
+        <Setter Property="Control.FontSize" Value="13"/>
+        <Setter Property="Control.Foreground" Value="{StaticResource TextColorMain}"/>
+        <Setter Property="Control.HorizontalAlignment" Value="Center"/>
+        <Setter Property="Control.VerticalAlignment" Value="Center"/>
+        <Setter Property="Control.HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="Control.VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Control.Height" Value="Auto"/>
+        <Setter Property="Control.Width" Value="Auto"/>
+    </Style>
+
+    <Style x:Key="StyleTextBlock_id-2">
+        <Setter Property="Control.Background" Value="Transparent"/>
+        <Setter Property="Control.FontSize" Value="13"/>
+        <Setter Property="Control.Foreground" Value="{StaticResource Color_id-1_3}"/>
+        <Setter Property="Control.HorizontalAlignment" Value="Left"/>
+        <Setter Property="Control.VerticalAlignment" Value="Center"/>
+        <Setter Property="Control.Padding" Value="3,0,0,0"/>
+        <Setter Property="Control.HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="Control.VerticalContentAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="StyleTextBlock_id-3">
+        <Setter Property="Control.Background" Value="Transparent"/>
+        <Setter Property="Control.FontSize" Value="13"/>
+        <Setter Property="Control.Foreground" Value="{StaticResource TextColorMain}"/>
+        <Setter Property="Control.HorizontalAlignment" Value="Left"/>
+        <Setter Property="Control.VerticalAlignment" Value="Center"/>
+        <Setter Property="Control.HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="Control.VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Control.Height" Value="Auto"/>
+        <Setter Property="Control.Width" Value="Auto"/>
+        <Setter Property="Control.Margin" Value="3"/>
+    </Style>
+
+    <Style x:Key="StyleTextBlock_id-4">
+        <Setter Property="Control.Background" Value="Transparent"/>
+        <Setter Property="Control.FontSize" Value="18"/>
+        <Setter Property="Control.Foreground" Value="{DynamicResource GreenMainColor}"/>
+        <Setter Property="Control.HorizontalAlignment" Value="Left"/>
+        <Setter Property="Control.VerticalAlignment" Value="Center"/>
+        <Setter Property="Control.HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="Control.VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Control.Height" Value="Auto"/>
+        <Setter Property="Control.Width" Value="Auto"/>
+    </Style>
+
+    <Style x:Key="StyleTextBlock_id-4_1">
+        <Setter Property="Control.Background" Value="Transparent"/>
+        <Setter Property="Control.FontSize" Value="18"/>
+        <Setter Property="Control.Foreground" Value="{DynamicResource PinkMainColor}"/>
+        <Setter Property="Control.HorizontalAlignment" Value="Left"/>
+        <Setter Property="Control.VerticalAlignment" Value="Center"/>
+        <Setter Property="Control.HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="Control.VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Control.Height" Value="Auto"/>
+        <Setter Property="Control.Width" Value="Auto"/>
+    </Style>
+
+    <Style x:Key="StyleTextBlock_id-5">
+        <Setter Property="Control.Background" Value="Transparent"/>
+        <Setter Property="Control.FontSize" Value="15"/>
+        <Setter Property="Control.Foreground" Value="{DynamicResource Color_id-1_6}"/>
+        <Setter Property="Control.HorizontalAlignment" Value="Center"/>
+        <Setter Property="Control.VerticalAlignment" Value="Center"/>
+        <Setter Property="Control.HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="Control.VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Control.Height" Value="Auto"/>
+        <Setter Property="Control.Width" Value="Auto"/>
+    </Style>
+
+    <Style x:Key="StyleTextBlock_id-6">
+        <Setter Property="Control.Background" Value="Transparent"/>
+        <Setter Property="Control.FontSize" Value="12"/>
+        <Setter Property="Control.Foreground" Value="{DynamicResource TextColorMain}"/>
+        <Setter Property="Control.HorizontalAlignment" Value="Center"/>
+        <Setter Property="Control.VerticalAlignment" Value="Center"/>
+        <Setter Property="Control.HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="Control.VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Control.Height" Value="Auto"/>
+        <Setter Property="Control.Width" Value="Auto"/>
+    </Style>
+
+    <Style x:Key="StyleTextBlock_id-6_1">
+        <Setter Property="Control.Background" Value="Transparent"/>
+        <Setter Property="Control.FontSize" Value="15"/>
+        <Setter Property="Control.Foreground" Value="{DynamicResource TextColorMain}"/>
+        <Setter Property="Control.HorizontalAlignment" Value="Center"/>
+        <Setter Property="Control.VerticalAlignment" Value="Center"/>
+        <Setter Property="Control.HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="Control.VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Control.Height" Value="Auto"/>
+        <Setter Property="Control.Width" Value="Auto"/>
+    </Style>
+
+    <Style x:Key="StyleTextBlock_id-6_2">
+        <Setter Property="Control.Background" Value="Transparent"/>
+        <Setter Property="Control.FontSize" Value="30"/>
+        <Setter Property="Control.Foreground" Value="{DynamicResource Color_id-1_7}"/>
+        <Setter Property="Control.HorizontalAlignment" Value="Center"/>
+        <Setter Property="Control.VerticalAlignment" Value="Center"/>
+        <Setter Property="Control.HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="Control.VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Control.Height" Value="Auto"/>
+        <Setter Property="Control.Width" Value="Auto"/>
+    </Style>
+
+    <Style x:Key="24HighLowTextBlockStyle">
+        <Setter Property="Control.Background" Value="Transparent"/>
+        <Setter Property="Control.FontSize" Value="14"/>
+        <Setter Property="Control.Foreground" Value="{DynamicResource GreenMainColor}"/>
+        <Setter Property="Control.HorizontalAlignment" Value="Center"/>
+        <Setter Property="Control.VerticalAlignment" Value="Center"/>
+        <Setter Property="Control.HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="Control.VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Control.Height" Value="Auto"/>
+        <Setter Property="Control.Width" Value="Auto"/>
+    </Style>
+
+    <!-- TextBox -->
+    <Style x:Key="TextBox_id-1" BasedOn="{StaticResource Shadow}">
+        <Setter Property="Control.Background" Value="{StaticResource Color_id-1}"/>
+        <Setter Property="Control.BorderThickness" Value="0"/>
+        <Setter Property="Control.Height" Value="Auto"/>
+        <Setter Property="Control.Width" Value="Auto"/>
+        <Setter Property="Control.HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="Control.VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Control.FontSize" Value="13"/>
+        <Setter Property="Control.Margin" Value="0"/>
+        <Setter Property="Control.Foreground" Value="{StaticResource TextColorMain}"/>
+    </Style>
+
+
+    <!-- StyleColor_N_Margin -->
+    <Style x:Key="StyleColor_id-1" BasedOn="{StaticResource Shadow}">
+        <Setter Property="Control.Background" Value="{StaticResource Color_id-1}"/>
+    </Style>
+
+    <Style x:Key="StyleColor_id-1_1" BasedOn="{StaticResource Shadow}">
+        <Setter Property="Control.Background" Value="{StaticResource Color_id-1_1}"/>
+    </Style>
+
+    <Style x:Key="StyleColor_id-1_2" BasedOn="{StaticResource Shadow}">
+        <Setter Property="Control.Background" Value="{StaticResource MainBackground}"/>
+    </Style>
+
+    <Style x:Key="StyleColor_id-1_3" BasedOn="{StaticResource Shadow}">
+        <Setter Property="Control.Background" Value="{StaticResource Color_id-1_3}"/>
+    </Style>
+
+    <Style x:Key="StyleColor_id-1_4" BasedOn="{StaticResource Shadow}">
+        <Setter Property="Control.Background" Value="{StaticResource GreenMainColor}"/>
+    </Style>
+
+    <Style x:Key="StyleColor_id-1_5" BasedOn="{StaticResource Shadow}">
+        <Setter Property="Control.Background" Value="{StaticResource PinkMainColor}"/>
+    </Style>
+
+    <Style x:Key="StyleColor_id-1_6">
+        <Setter Property="Control.Background" Value="{StaticResource Color_id-3}"/>
+    </Style>
+
+    <Style x:Key="StyleColor_id-1_7" BasedOn="{StaticResource Shadow}">
+        <Setter Property="Control.Background" Value="{StaticResource Color_id-7}"/>
+    </Style>
+
+    <Style x:Key="StyleColor_id-1_8" BasedOn="{StaticResource Shadow}">
+        <Setter Property="Control.Background" Value="{StaticResource Color_id-8}"/>
+    </Style>
+
+    <Style x:Key="StyleColor_id-1_9">
+        <Setter Property="Control.Background" Value="{StaticResource Color_id-1}"/>
+        <Setter Property="Control.BorderThickness" Value="0"/>
+    </Style>
+
+    <Style x:Key="StyleColor_id-1_10" BasedOn="{StaticResource Shadow}">
+        <Setter Property="Control.Background" Value="{StaticResource Color_id-10}"/>
+    </Style>
+
+    <Style x:Key="StyleColor_id-2" BasedOn="{StaticResource Shadow}">
+        <Setter Property="Control.Background" Value="{StaticResource Color_id-1}"/>
+        <Setter Property="Control.Margin" Value="0,0,3,0"/>
+    </Style>
+
+
+    <!-- StyleColorMargin -->
+    <Style x:Key="Style_id-1" BasedOn="{StaticResource Shadow}">
+        <Setter Property="Control.Background" Value="{StaticResource Color_id-1}"/>
+        <Setter Property="Control.Margin" Value="0,0,3,3"/>
+    </Style>
+
+    <Style x:Key="Style_id-2" BasedOn="{StaticResource Shadow}">
+        <Setter Property="Control.Background" Value="{StaticResource Color_id-2}"/>
+        <Setter Property="Control.Margin" Value="0,0,0,3"/>
+    </Style>
+
+    <Style x:Key="Style_id-3" BasedOn="{StaticResource Shadow}">
+        <Setter Property="Control.Background" Value="{StaticResource Color_id-3}"/>
+        <Setter Property="Control.Margin" Value="3,0,0,3"/>
+    </Style>
+
+    <Style x:Key="Style_id-4" BasedOn="{StaticResource Shadow}">
+        <Setter Property="Control.Background" Value="{StaticResource Color_id-4}"/>
+        <Setter Property="Control.Margin" Value="0,0,3,0"/>
+    </Style>
+
+    <Style x:Key="Style_id-5" BasedOn="{StaticResource Shadow}">
+        <Setter Property="Control.Background" Value="{StaticResource Color_id-3}"/>
+        <Setter Property="Control.Margin" Value="3,0,0,3"/>
+    </Style>
+
+
+    <Style x:Key="Style_id-7" BasedOn="{StaticResource Shadow}">
+        <Setter Property="Control.Background" Value="{StaticResource Color_id-1}"/>
+    </Style>
+
+    <Style x:Key="StyleColor_id-9"
+           TargetType="{x:Type Border}"
+           BasedOn="{StaticResource Shadow}">
+        <Setter Property="Background" Value="{StaticResource Color_id-1}"/>
+        <Setter Property="BorderThickness" Value="1,0,0,0"/>
+        <Setter Property="BorderBrush" Value="{StaticResource MainBackground}"/>
+        <Setter Property="Height" Value="Auto"/>
+        <Setter Property="Width" Value="Auto"/>
+    </Style>
+
+    <Style x:Key="StyleColor_id-10">
+        <Setter Property="Control.Background" Value="{StaticResource Color_id-11}"/>
+        <Setter Property="Control.BorderThickness" Value="0,10"/>
+        <Setter Property="Control.BorderBrush" Value="{StaticResource MainBackground}"/>
+    </Style>
+
+
+
+    <!-- ButtonStyle -->
+    <Style x:Key="StyleButton_id-1"
+           TargetType="{x:Type Button}"
+           BasedOn="{StaticResource Shadow}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Foreground" Value="{DynamicResource TextColorMain}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Height" Value="Auto"/>
+        <Setter Property="Width" Value="Auto"/>
+        <Setter Property="Margin" Value="0,0,3,0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            SnapsToDevicePixels="True"
+                            ToolTip="{TemplateBinding ToolTip}">
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{TemplateBinding Content}"/>
+                        <Border.Style>
+                            <Style>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=border, Path=IsMouseOver}" Value="True">
+                                        <Setter Property="Border.Background" Value="{DynamicResource MainBackground}"/>
+                                        <Setter Property="Button.Content">
+                                            <Setter.Value>
+                                                <StaticResource ResourceKey="TextStyle"/>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding ElementName=border, Path=IsMouseOver}" Value="False">
+                                        <Setter Property="Border.Background" Value="{DynamicResource Color_id-1}"/>
+                                        <Setter Property="Button.Content">
+                                            <Setter.Value>
+                                                <StaticResource ResourceKey="TextStyle"/>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </DataTrigger>
+                                    <EventTrigger RoutedEvent="Button.MouseEnter">
+                                        <EventTrigger.Actions>
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation
+                                                        Storyboard.TargetProperty="(Button.Opacity)"
+                                                        From="1.0" To="0.5" Duration="0:0:0.5" AutoReverse="True"
+                                                        RepeatBehavior="Forever" />
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger.Actions>
+                                    </EventTrigger>
+                                    <EventTrigger RoutedEvent="Button.MouseLeave">
+                                        <EventTrigger.Actions>
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation
+                                                        Storyboard.TargetProperty="(Button.Opacity)"
+                                                        To="1" Duration="0:0:0.1" />
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger.Actions>
+                                    </EventTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Border.Style>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="StyleButton_id-2"
+           TargetType="TabItem">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TabItem">
+                    <Border Name="Border" BorderThickness="0,1,1,1" BorderBrush="{StaticResource MainBackground}" CornerRadius="0,4,4,0" Margin="0,0,0,3">
+                        <ContentPresenter x:Name="ContentSite"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        ContentSource="Header"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource Color_id-9_1}" />
+                            <!--<Setter TargetName="Border" Property="Control.Foreground" Value="#FAC300"/>-->
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="False">
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource Color_id-9}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- После нажатия меняет цвет на Color_id-1_5 и текст на Sell -->
+    <Style x:Key="StyleButton_id-3"
+           TargetType="{x:Type Button}"
+           BasedOn="{StaticResource Shadow}">
+        <Setter Property="Control.BorderThickness" Value="3"/>
+        <Setter Property="Control.BorderBrush" Value="{DynamicResource GreenMainColor}"/>
+        <Setter Property="Control.FontSize" Value="14"/>
+        <Setter Property="Control.Foreground" Value="{StaticResource GreenMainColor}"/>
+        <Setter Property="Control.Width" Value="Auto"/>
+        <Setter Property="Control.Height" Value="Auto"/>
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Border x:Name="border"
+                                CornerRadius="2"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                SnapsToDevicePixels="True"
+                                ToolTip="{TemplateBinding ToolTip}">
+                            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{TemplateBinding Content}"/>
+                            <Border.Style>
+                                <Style>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementName=border, Path=IsMouseOver}" Value="True">
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding ElementName=border, Path=IsMouseOver}" Value="False">
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="StyleButton_id-4"
+           TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Foreground" Value="{DynamicResource TextColorMain}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource MainBackground}"/>
+        <Setter Property="Height" Value="Auto"/>
+        <Setter Property="Width" Value="Auto"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            SnapsToDevicePixels="True"
+                            CornerRadius="3"
+                            ToolTip="{TemplateBinding ToolTip}">
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{TemplateBinding Content}"/>
+                        <Border.Style>
+                            <Style>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=border, Path=IsMouseOver}" Value="True">
+                                        <Setter Property="Border.Background" Value="{DynamicResource MainBackground}"/>
+                                        <Setter Property="Button.Content">
+                                            <Setter.Value>
+                                                <StaticResource ResourceKey="TextStyle"/>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding ElementName=border, Path=IsMouseOver}" Value="False">
+                                        <Setter Property="Border.Background" Value="{DynamicResource Color_id-1}"/>
+                                        <Setter Property="Button.Content">
+                                            <Setter.Value>
+                                                <StaticResource ResourceKey="TextStyle"/>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </DataTrigger>
+                                    <EventTrigger RoutedEvent="Button.MouseEnter">
+                                        <EventTrigger.Actions>
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation
+                                                        Storyboard.TargetProperty="(Button.Opacity)"
+                                                        From="1.0" To="0.5" Duration="0:0:0.5" AutoReverse="True"
+                                                        RepeatBehavior="Forever" />
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger.Actions>
+                                    </EventTrigger>
+                                    <EventTrigger RoutedEvent="Button.MouseLeave">
+                                        <EventTrigger.Actions>
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation
+                                                        Storyboard.TargetProperty="(Button.Opacity)"
+                                                        To="1" Duration="0:0:0.1" />
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger.Actions>
+                                    </EventTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Border.Style>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

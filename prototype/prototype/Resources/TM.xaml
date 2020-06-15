@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This file is NOT compatible with Silverlight-->
+<Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+  <Canvas Name="Слой_1" Width="10.6" Height="30">
+    <Canvas.RenderTransform>
+      <TranslateTransform X="0" Y="0"/>
+    </Canvas.RenderTransform>
+    <Canvas.Resources>
+      <LinearGradientBrush xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Key="Безымянный_градиент_352" MappingMode="Absolute" StartPoint="5,23" EndPoint="5,0">
+        <LinearGradientBrush.GradientStops>
+          <GradientStopCollection>
+            <GradientStop Color="#2C2C36" Offset="0"/>
+            <GradientStop Color="#00B487" Offset="1"/>
+          </GradientStopCollection>
+        </LinearGradientBrush.GradientStops>
+      </LinearGradientBrush>
+      <LinearGradientBrush xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Key="Безымянный_градиент_136" MappingMode="Absolute" StartPoint="5,7" EndPoint="5,30">
+        <LinearGradientBrush.GradientStops>
+          <GradientStopCollection>
+            <GradientStop Color="#2C2C36" Offset="0"/>
+            <GradientStop Color="#BE005F" Offset="1"/>
+          </GradientStopCollection>
+        </LinearGradientBrush.GradientStops>
+      </LinearGradientBrush>
+    </Canvas.Resources>
+    <!--Unknown tag: metadata-->
+    <!--Unknown tag: sodipodi:namedview-->
+    <Polygon xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Points="5.17 0 0 6.52 3.17 6.52 2.52 6.52 2.52 6.52 3.02 6.52 3.02 23.25 5.17 23.25 5.17 6.52 7.85 6.52 7.85 6.52 10.35 6.52 5.17 0" Name="polygon18" FillRule="NonZero" Fill="#000000"/>
+    <Polygon xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Points="8.11 23.48 8.11 23.48 7.58 23.48 7.58 6.75 5.43 6.75 5.43 23.48 2.78 23.48 2.78 23.48 3.43 23.48 0.25 23.48 5.42 30 10.6 23.48 8.11 23.48" Name="polygon20" FillRule="NonZero" Fill="#000000"/>
+  </Canvas>
+</Viewbox>

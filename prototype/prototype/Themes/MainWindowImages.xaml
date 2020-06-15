@@ -1,0 +1,811 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:TerminalMain.v2">
+    
+    <!-- Иконка Лого -->
+    <ContentControl x:Key="TMLogoImage">
+        <ContentControl.ContentTemplate>
+            <DataTemplate>
+                <Viewbox Width="24" Height="24">
+                    <Canvas Width="24" Height="24">
+                        <Canvas.RenderTransform>
+                            <TranslateTransform X="0" Y="0" />
+                        </Canvas.RenderTransform>
+                        <Canvas.Resources />
+                        <!--Unknown tag: metadata-->
+                        <!--Unknown tag: sodipodi:namedview-->
+                        <Path
+                            Data="M0 0h24v24H0z"
+                            />
+                        <Path
+                            Fill="#000000"
+                            Data="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
+                    </Canvas>
+                </Viewbox>
+            </DataTemplate>
+        </ContentControl.ContentTemplate>
+    </ContentControl>
+    
+    <!--******************************-->
+    
+    <!-- Иконка Аккаунта -->
+    <ContentControl x:Key="AccountImage">
+        <ContentControl.ContentTemplate>
+            <DataTemplate>
+
+                <Viewbox Width="36" Height="36"
+                        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    <Canvas Width="511.001" Height="536.850">
+
+                        <Canvas>
+                            
+                            <!-- Слой 1/<Контур> -->
+                            <Path StrokeThickness="0.9" Stroke="#ff3b3b45" StrokeMiterLimit="1.0" Data="F1 M 255.501,180.896 C 114.626,180.896 0.425,340.072 0.425,536.425 L 510.576,536.425 C 510.576,340.072 396.375,180.896 255.501,180.896 Z">
+                                <Path.Fill>
+                                    <LinearGradientBrush MappingMode="Absolute" StartPoint="300.000,-210.265" EndPoint="300.000,-567.970">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStop Offset="0.00" Color="#ff2b2b35"/>
+                                            <GradientStop Offset="0.50" Color="#ff3d3d47"/>
+                                            <GradientStop Offset="1.00" Color="#ff4f4f59"/>
+                                            <GradientStop Offset="1.00" Color="#ff4f4f59"/>
+                                        </LinearGradientBrush.GradientStops>
+                                        <LinearGradientBrush.Transform>
+                                            <MatrixTransform Matrix="1.000,0.000,-0.000,-1.000,-44.499,-31.575" />
+                                        </LinearGradientBrush.Transform>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+
+                            <!-- Слой 1/<Эллипс> -->
+                            <Path StrokeThickness="0.9" Stroke="#ff3b3b45" StrokeMiterLimit="1.0" Data="F1 M 474.812,207.267 C 474.812,321.503 377.929,414.109 258.418,414.109 C 138.908,414.109 42.025,321.503 42.025,207.267 C 42.025,93.031 138.908,0.425 258.418,0.425 C 377.929,0.425 474.812,93.031 474.812,207.267 Z">
+                                <Path.Fill>
+                                    <LinearGradientBrush MappingMode="Absolute" StartPoint="302.918,-27.696" EndPoint="302.918,-446.109">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStop Offset="0.00" Color="#ff2b2b35"/>
+                                            <GradientStop Offset="0.50" Color="#ff3d3d47"/>
+                                            <GradientStop Offset="1.00" Color="#ff4f4f59"/>
+                                            <GradientStop Offset="1.00" Color="#ff4f4f59"/>
+                                        </LinearGradientBrush.GradientStops>
+                                        <LinearGradientBrush.Transform>
+                                            <MatrixTransform Matrix="1.000,0.000,-0.000,-1.000,-44.499,-31.575" />
+                                        </LinearGradientBrush.Transform>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+
+                        </Canvas>
+                    </Canvas>
+                </Viewbox>
+
+            </DataTemplate>
+        </ContentControl.ContentTemplate>
+    </ContentControl>
+
+    <!-- Иконка Баланса -->
+    <ContentControl x:Key="FundsImage">
+        <ContentControl.ContentTemplate>
+            <DataTemplate>
+
+                <Viewbox Width="36" Height="36"
+                        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    <Canvas Width="577.652" Height="456.062">
+
+                        <Canvas>
+
+                            <!-- Слой 1/<Контур> -->
+                            <Path StrokeThickness="14.1" StrokeMiterLimit="1.0" Data="F1 M 545.438,351.565 L 80.313,407.667 C 65.877,409.408 52.921,398.657 51.376,383.654 L 26.727,144.389 C 25.182,129.385 35.631,115.811 50.067,114.070 L 515.192,57.968 C 529.628,56.226 542.584,66.977 544.129,81.981 L 568.778,321.246 C 570.323,336.249 559.874,349.823 545.438,351.565 Z">
+                                <Path.Fill>
+                                    <LinearGradientBrush MappingMode="Absolute" StartPoint="112.117,-306.839" EndPoint="-343.995,-26.939">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStop Offset="0.00" Color="#ff2b2b35"/>
+                                            <GradientStop Offset="0.50" Color="#ff3d2229"/>
+                                            <GradientStop Offset="1.00" Color="#ff4f181d"/>
+                                            <GradientStop Offset="1.00" Color="#ff4f181d"/>
+                                        </LinearGradientBrush.GradientStops>
+                                        <LinearGradientBrush.Transform>
+                                            <MatrixTransform Matrix="0.998,-0.056,-0.036,-0.886,-8.276,-120.117" />
+                                        </LinearGradientBrush.Transform>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+
+                            <!-- Слой 1/<Многоугольник> -->
+                            <Path StrokeThickness="4.7" Stroke="#ff09bd68" StrokeMiterLimit="1.0" Data="F1 M 165.102,3.004 L 154.387,86.791 L 482.556,93.164 L 165.102,3.004 Z">
+                                <Path.Fill>
+                                    <LinearGradientBrush MappingMode="Absolute" StartPoint="165.561,-122.073" EndPoint="493.730,-122.073">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStop Offset="0.00" Color="#ff2b2b35"/>
+                                            <GradientStop Offset="0.50" Color="#ff1a744f"/>
+                                            <GradientStop Offset="1.00" Color="#ff09bd68"/>
+                                        </LinearGradientBrush.GradientStops>
+                                        <LinearGradientBrush.Transform>
+                                            <MatrixTransform Matrix="1.000,0.000,-0.000,-1.000,-11.174,-73.989" />
+                                        </LinearGradientBrush.Transform>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+
+                            <!-- Слой 1/<Многоугольник> -->
+                            <Path StrokeThickness="4.7" Stroke="#ff09bd68" StrokeMiterLimit="1.0" Data="F1 M 86.660,18.212 L 75.059,92.403 L 402.070,93.164 L 86.660,18.212 Z">
+                                <Path.Fill>
+                                    <LinearGradientBrush MappingMode="Absolute" StartPoint="86.233,-129.677" EndPoint="413.244,-129.677">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStop Offset="0.00" Color="#ff2b2b35"/>
+                                            <GradientStop Offset="0.50" Color="#ff1a744f"/>
+                                            <GradientStop Offset="1.00" Color="#ff09bd68"/>
+                                        </LinearGradientBrush.GradientStops>
+                                        <LinearGradientBrush.Transform>
+                                            <MatrixTransform Matrix="1.000,0.000,-0.000,-1.000,-11.174,-73.989" />
+                                        </LinearGradientBrush.Transform>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+
+                            <!-- Слой 1/<Прямоугольник> -->
+                            <Path StrokeThickness="14.1" StrokeMiterLimit="1.0" Data="F1 M 476.680,449.017 L 100.972,449.017 C 49.097,449.017 7.045,406.965 7.045,355.090 L 7.045,187.983 C 7.045,136.109 49.097,94.056 100.972,94.056 L 476.680,94.056 C 528.555,94.056 570.607,136.109 570.607,187.983 L 570.607,355.090 C 570.607,406.965 528.555,449.017 476.680,449.017 Z">
+                                <Path.Fill>
+                                    <LinearGradientBrush MappingMode="Absolute" StartPoint="581.781,-345.526" EndPoint="18.219,-345.526">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStop Offset="0.00" Color="#ff4f181d"/>
+                                            <GradientStop Offset="0.50" Color="#ff3d2229"/>
+                                            <GradientStop Offset="1.00" Color="#ff2b2b35"/>
+                                            <GradientStop Offset="1.00" Color="#ff2b2b35"/>
+                                        </LinearGradientBrush.GradientStops>
+                                        <LinearGradientBrush.Transform>
+                                            <MatrixTransform Matrix="1.000,0.000,-0.000,-1.000,-11.174,-73.989" />
+                                        </LinearGradientBrush.Transform>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+
+                            <!-- Слой 1/<Контур> -->
+                            <Path StrokeThickness="14.1" StrokeMiterLimit="1.0" Data="F1 M 569.929,188.841 L 339.661,188.841 C 318.070,188.841 300.567,203.859 300.567,222.384 L 300.567,308.058 C 300.567,326.584 318.070,341.601 339.661,341.601 L 569.929,341.601 L 569.929,188.841 Z">
+                                <Path.Fill>
+                                    <LinearGradientBrush MappingMode="Absolute" StartPoint="581.103,-339.210" EndPoint="311.741,-339.210">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStop Offset="0.00" Color="#ff4f181d"/>
+                                            <GradientStop Offset="0.50" Color="#ff3d2229"/>
+                                            <GradientStop Offset="1.00" Color="#ff2b2b35"/>
+                                            <GradientStop Offset="1.00" Color="#ff2b2b35"/>
+                                        </LinearGradientBrush.GradientStops>
+                                        <LinearGradientBrush.Transform>
+                                            <MatrixTransform Matrix="1.000,0.000,-0.000,-1.000,-11.174,-73.989" />
+                                        </LinearGradientBrush.Transform>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+
+                            <!-- Слой 1/<Эллипс> -->
+                            <Path StrokeThickness="14.1" StrokeMiterLimit="1.0" Data="F1 M 441.606,267.153 C 441.606,294.150 417.993,316.035 388.865,316.035 C 359.737,316.035 336.124,294.150 336.124,267.153 C 336.124,240.157 359.737,218.272 388.865,218.272 C 417.993,218.272 441.606,240.157 441.606,267.153 Z">
+                                <Path.Fill>
+                                    <RadialGradientBrush MappingMode="Absolute" GradientOrigin="400.039,-341.143" Center="400.039,-341.143" RadiusX="50.848" RadiusY="50.848">
+                                        <RadialGradientBrush.GradientStops>
+                                            <GradientStop Offset="0.00" Color="#ff2b2b35"/>
+                                            <GradientStop Offset="0.50" Color="#ff3d2229"/>
+                                            <GradientStop Offset="1.00" Color="#ff4f181d"/>
+                                            <GradientStop Offset="1.00" Color="#ff4f181d"/>
+                                        </RadialGradientBrush.GradientStops>
+                                        <RadialGradientBrush.Transform>
+                                            <MatrixTransform Matrix="1.000,0.000,-0.000,-1.000,-11.174,-73.989" />
+                                        </RadialGradientBrush.Transform>
+                                    </RadialGradientBrush>
+                                </Path.Fill>
+                            </Path>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="14.1" StrokeMiterLimit="1.0" Data="F1 M 500.606,130.464 L 475.931,130.464">
+                                <Path.Fill>
+                                    <LinearGradientBrush MappingMode="Absolute" StartPoint="487.105,-204.453" EndPoint="511.780,-204.453">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStop Offset="0.00" Color="#ff4f181d"/>
+                                            <GradientStop Offset="0.50" Color="#ff3d2229"/>
+                                            <GradientStop Offset="1.00" Color="#ff2b2b35"/>
+                                            <GradientStop Offset="1.00" Color="#ff2b2b35"/>
+                                        </LinearGradientBrush.GradientStops>
+                                        <LinearGradientBrush.Transform>
+                                            <MatrixTransform Matrix="1.000,0.000,-0.000,-1.000,-11.174,-73.989" />
+                                        </LinearGradientBrush.Transform>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="14.1" StrokeMiterLimit="1.0" Data="F1 M 365.932,130.464 L 341.257,130.464">
+                                <Path.Fill>
+                                    <LinearGradientBrush MappingMode="Absolute" StartPoint="352.431,-204.453" EndPoint="377.106,-204.453">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStop Offset="0.00" Color="#ff4f181d"/>
+                                            <GradientStop Offset="0.50" Color="#ff3d2229"/>
+                                            <GradientStop Offset="1.00" Color="#ff2b2b35"/>
+                                            <GradientStop Offset="1.00" Color="#ff2b2b35"/>
+                                        </LinearGradientBrush.GradientStops>
+                                        <LinearGradientBrush.Transform>
+                                            <MatrixTransform Matrix="1.000,0.000,-0.000,-1.000,-11.174,-73.989" />
+                                        </LinearGradientBrush.Transform>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="14.1" StrokeMiterLimit="1.0" Data="F1 M 241.752,130.464 L 217.078,130.464">
+                                <Path.Fill>
+                                    <LinearGradientBrush MappingMode="Absolute" StartPoint="228.252,-204.453" EndPoint="252.926,-204.453">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStop Offset="0.00" Color="#ff4f181d"/>
+                                            <GradientStop Offset="0.50" Color="#ff3d2229"/>
+                                            <GradientStop Offset="1.00" Color="#ff2b2b35"/>
+                                            <GradientStop Offset="1.00" Color="#ff2b2b35"/>
+                                        </LinearGradientBrush.GradientStops>
+                                        <LinearGradientBrush.Transform>
+                                            <MatrixTransform Matrix="1.000,0.000,-0.000,-1.000,-11.174,-73.989" />
+                                        </LinearGradientBrush.Transform>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="14.1" StrokeMiterLimit="1.0" Data="F1 M 125.204,130.464 L 100.529,130.464">
+                                <Path.Fill>
+                                    <LinearGradientBrush MappingMode="Absolute" StartPoint="111.703,-204.453" EndPoint="136.378,-204.453">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStop Offset="0.00" Color="#ff4f181d"/>
+                                            <GradientStop Offset="0.50" Color="#ff3d2229"/>
+                                            <GradientStop Offset="1.00" Color="#ff2b2b35"/>
+                                            <GradientStop Offset="1.00" Color="#ff2b2b35"/>
+                                        </LinearGradientBrush.GradientStops>
+                                        <LinearGradientBrush.Transform>
+                                            <MatrixTransform Matrix="1.000,0.000,-0.000,-1.000,-11.174,-73.989" />
+                                        </LinearGradientBrush.Transform>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="14.1" StrokeMiterLimit="1.0" Data="F1 M 499.319,407.909 L 474.644,407.909">
+                                <Path.Fill>
+                                    <LinearGradientBrush MappingMode="Absolute" StartPoint="485.818,-481.898" EndPoint="510.493,-481.898">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStop Offset="0.00" Color="#ff4f181d"/>
+                                            <GradientStop Offset="0.50" Color="#ff3d2229"/>
+                                            <GradientStop Offset="1.00" Color="#ff2b2b35"/>
+                                            <GradientStop Offset="1.00" Color="#ff2b2b35"/>
+                                        </LinearGradientBrush.GradientStops>
+                                        <LinearGradientBrush.Transform>
+                                            <MatrixTransform Matrix="1.000,0.000,-0.000,-1.000,-11.174,-73.989" />
+                                        </LinearGradientBrush.Transform>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="14.1" StrokeMiterLimit="1.0" Data="F1 M 371.892,407.909 L 347.217,407.909">
+                                <Path.Fill>
+                                    <LinearGradientBrush MappingMode="Absolute" StartPoint="358.392,-481.898" EndPoint="383.066,-481.898">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStop Offset="0.00" Color="#ff4f181d"/>
+                                            <GradientStop Offset="0.50" Color="#ff3d2229"/>
+                                            <GradientStop Offset="1.00" Color="#ff2b2b35"/>
+                                            <GradientStop Offset="1.00" Color="#ff2b2b35"/>
+                                        </LinearGradientBrush.GradientStops>
+                                        <LinearGradientBrush.Transform>
+                                            <MatrixTransform Matrix="1.000,0.000,-0.000,-1.000,-11.174,-73.989" />
+                                        </LinearGradientBrush.Transform>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="14.1" StrokeMiterLimit="1.0" Data="F1 M 244.990,407.909 L 220.315,407.909">
+                                <Path.Fill>
+                                    <LinearGradientBrush MappingMode="Absolute" StartPoint="231.489,-481.898" EndPoint="256.164,-481.898">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStop Offset="0.00" Color="#ff4f181d"/>
+                                            <GradientStop Offset="0.50" Color="#ff3d2229"/>
+                                            <GradientStop Offset="1.00" Color="#ff2b2b35"/>
+                                            <GradientStop Offset="1.00" Color="#ff2b2b35"/>
+                                        </LinearGradientBrush.GradientStops>
+                                        <LinearGradientBrush.Transform>
+                                            <MatrixTransform Matrix="1.000,0.000,-0.000,-1.000,-11.174,-73.989" />
+                                        </LinearGradientBrush.Transform>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="14.1" StrokeMiterLimit="1.0" Data="F1 M 128.442,407.909 L 103.767,407.909">
+                                <Path.Fill>
+                                    <LinearGradientBrush MappingMode="Absolute" StartPoint="114.941,-481.898" EndPoint="139.616,-481.898">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStop Offset="0.00" Color="#ff4f181d"/>
+                                            <GradientStop Offset="0.50" Color="#ff3d2229"/>
+                                            <GradientStop Offset="1.00" Color="#ff2b2b35"/>
+                                            <GradientStop Offset="1.00" Color="#ff2b2b35"/>
+                                        </LinearGradientBrush.GradientStops>
+                                        <LinearGradientBrush.Transform>
+                                            <MatrixTransform Matrix="1.000,0.000,-0.000,-1.000,-11.174,-73.989" />
+                                        </LinearGradientBrush.Transform>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+
+                        </Canvas>
+                    </Canvas>
+                </Viewbox>
+
+            </DataTemplate>
+        </ContentControl.ContentTemplate>
+    </ContentControl>
+    
+    <!-- Иконка Ду -->
+    <ContentControl x:Key="TMLogo">
+        <ContentControl.ContentTemplate>
+            <DataTemplate>
+                
+                <Viewbox Width="36" Height="36"
+                        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    <Canvas Width="554.591" Height="485.873">
+
+                        <Canvas>
+
+                            <!-- Слой 1/<Прямоугольник> -->
+                            <Path StrokeThickness="4.1" Stroke="#ffbd005e" StrokeMiterLimit="1.0" Data="F1 M 240.203,460.225 L 154.651,460.225 L 154.651,211.235 L 240.203,211.235 L 240.203,460.225 Z">
+                                <Path.Fill>
+                                    <LinearGradientBrush MappingMode="Absolute" StartPoint="220.419,-265.777" EndPoint="220.419,-520.149">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStop Offset="0.00" Color="#ff2b2b35"/>
+                                            <GradientStop Offset="0.50" Color="#ff74154a"/>
+                                            <GradientStop Offset="1.00" Color="#ffbd005e"/>
+                                        </LinearGradientBrush.GradientStops>
+                                        <LinearGradientBrush.Transform>
+                                            <MatrixTransform Matrix="1.000,0.000,-0.000,-1.000,-22.992,-57.483" />
+                                        </LinearGradientBrush.Transform>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+
+                            <!-- Слой 1/<Прямоугольник> -->
+                            <Path StrokeThickness="4.1" Stroke="#ff00b386" StrokeMiterLimit="1.0" Data="F1 M 354.273,460.225 L 268.721,460.225 L 268.721,110.015 L 354.273,110.015 L 354.273,460.225 Z">
+                                <Path.Fill>
+                                    <LinearGradientBrush MappingMode="Absolute" StartPoint="334.489,-519.367" EndPoint="334.489,-162.737">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStop Offset="0.00" Color="#ff2b2b35"/>
+                                            <GradientStop Offset="0.50" Color="#ff156f5e"/>
+                                            <GradientStop Offset="1.00" Color="#ff00b386"/>
+                                        </LinearGradientBrush.GradientStops>
+                                        <LinearGradientBrush.Transform>
+                                            <MatrixTransform Matrix="1.000,0.000,-0.000,-1.000,-22.992,-57.483" />
+                                        </LinearGradientBrush.Transform>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+
+                            <!-- Слой 1/<Прямоугольник> -->
+                            <Path StrokeThickness="4.1" Stroke="#ff00b386" StrokeMiterLimit="1.0" Data="F1 M 126.134,460.225 L 40.581,460.225 L 40.581,319.351 L 126.134,319.351 L 126.134,460.225 Z">
+                                <Path.Fill>
+                                    <LinearGradientBrush MappingMode="Absolute" StartPoint="106.350,-519.210" EndPoint="106.350,-373.761">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStop Offset="0.00" Color="#ff2b2b35"/>
+                                            <GradientStop Offset="0.50" Color="#ff156f5e"/>
+                                            <GradientStop Offset="1.00" Color="#ff00b386"/>
+                                        </LinearGradientBrush.GradientStops>
+                                        <LinearGradientBrush.Transform>
+                                            <MatrixTransform Matrix="1.000,0.000,-0.000,-1.000,-22.992,-57.483" />
+                                        </LinearGradientBrush.Transform>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+
+                            <!-- Слой 1/<Прямоугольник> -->
+                            <Path StrokeThickness="4.1" Stroke="#ff00b386" StrokeMiterLimit="1.0" Data="F1 M 468.342,460.225 L 382.790,460.225 L 382.790,2.055 L 468.342,2.055 L 468.342,460.225 Z">
+                                <Path.Fill>
+                                    <LinearGradientBrush MappingMode="Absolute" StartPoint="450.603,-520.506" EndPoint="446.476,-52.382">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStop Offset="0.00" Color="#ff2b2b35"/>
+                                            <GradientStop Offset="0.50" Color="#ff156f5e"/>
+                                            <GradientStop Offset="1.00" Color="#ff00b386"/>
+                                        </LinearGradientBrush.GradientStops>
+                                        <LinearGradientBrush.Transform>
+                                            <MatrixTransform Matrix="1.000,0.000,-0.000,-1.000,-22.992,-57.483" />
+                                        </LinearGradientBrush.Transform>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+
+                            <!-- Слой 1/<Контур> -->
+                            <Path StrokeThickness="4.1" Stroke="#ff00b386" StrokeMiterLimit="1.0" Data="F1 M 504.238,135.353 L 524.437,159.788 L 511.050,143.596 L 224.916,379.987 L 191.242,339.254 L 191.403,339.121 L 177.024,321.726 L 176.863,321.859 L 176.655,321.608 L 159.255,335.984 L 159.462,336.235 L 2.894,465.584 L 17.273,482.979 L 173.843,353.629 L 221.105,410.803 L 221.895,411.758 L 525.431,160.991 L 532.163,169.135 L 551.121,125.046 L 504.238,135.353 Z">
+                                <Path.Fill>
+                                    <LinearGradientBrush MappingMode="Absolute" StartPoint="25.887,-361.495" EndPoint="574.113,-361.495">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStop Offset="0.00" Color="#ff2b2b35"/>
+                                            <GradientStop Offset="0.50" Color="#ff156f5e"/>
+                                            <GradientStop Offset="1.00" Color="#ff00b386"/>
+                                        </LinearGradientBrush.GradientStops>
+                                        <LinearGradientBrush.Transform>
+                                            <MatrixTransform Matrix="1.000,0.000,-0.000,-1.000,-22.992,-57.483" />
+                                        </LinearGradientBrush.Transform>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+
+                        </Canvas>
+                    </Canvas>
+                </Viewbox>
+                
+            </DataTemplate>
+        </ContentControl.ContentTemplate>
+    </ContentControl>
+    
+    <!-- Bot Image -->
+    <ContentControl x:Key="BotImage">
+        <ContentControl.ContentTemplate>
+            <DataTemplate>
+
+                <Viewbox Width="36" Height="36"
+                        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    <Canvas Width="512.187" Height="512.187">
+
+                        <Canvas>
+
+                            <!-- Слой 1/<Эллипс> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 92.844,61.540 C 200.293,-28.620 360.487,-14.605 450.647,92.844 C 540.807,200.293 526.792,360.487 419.343,450.647 C 311.894,540.807 151.701,526.792 61.540,419.343 C -28.620,311.894 -14.605,151.701 92.844,61.540 Z"/>
+
+                            <!-- Слой 1/<Эллипс> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 110.974,83.147 C 206.490,2.999 348.893,15.458 429.041,110.974 C 509.188,206.490 496.729,348.893 401.213,429.041 C 305.697,509.188 163.294,496.729 83.147,401.213 C 2.999,305.697 15.458,163.294 110.974,83.147 Z"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 61.540,419.343 L 83.147,401.213"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 429.041,110.974 L 450.647,92.844"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 110.974,83.147 L 92.844,61.540"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 401.213,429.041 L 419.343,450.647"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 3.088,233.958 L 31.192,236.417"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 480.996,275.770 L 509.098,278.229"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 275.770,31.186 L 278.229,3.089"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 236.417,481.001 L 233.959,509.098"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 5.991,211.994 L 33.765,216.891"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 295.297,33.761 L 300.195,5.983"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 216.889,478.435 L 211.991,506.212"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 478.426,295.297 L 506.212,300.196"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 10.776,190.361 L 38.001,197.656"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 314.531,38.001 L 321.832,10.755"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 474.166,314.526 L 501.432,321.832"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 197.656,474.186 L 190.355,501.432"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 17.439,169.230 L 43.907,178.864"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 333.323,43.907 L 342.971,17.399"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 468.280,333.323 L 494.788,342.971"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 178.864,468.280 L 169.216,494.788"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 25.863,148.735 L 51.431,160.658"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 351.529,51.431 L 363.452,25.863"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 160.658,460.756 L 148.735,486.325"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 460.756,351.529 L 486.325,363.452"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 369.007,60.521 L 383.114,36.088"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 451.664,369.006 L 476.099,383.114"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 60.521,143.180 L 36.148,129.108"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 143.392,451.298 L 129.073,476.099"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 48.053,110.422 L 71.111,126.567"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 385.620,71.111 L 401.802,48.001"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 126.567,441.076 L 110.386,464.186"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 441.076,385.620 L 464.186,401.802"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 61.540,92.844 L 83.118,110.950"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 429.070,401.238 L 450.679,419.370"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 401.238,83.118 L 419.370,61.508"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 110.950,429.070 L 92.817,450.679"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 76.510,76.510 L 96.443,96.443"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 415.729,96.458 L 435.676,76.511"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 415.744,415.744 L 435.689,435.689"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 96.443,415.744 L 76.498,435.689"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 110.413,48.040 L 126.592,71.146"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 441.042,126.592 L 464.132,110.424"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 385.584,441.025 L 401.774,464.147"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 71.146,385.596 L 48.055,401.764"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 129.108,36.148 L 143.192,60.542"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 451.646,143.192 L 476.060,129.096"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 368.996,451.646 L 383.100,476.076"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 60.542,368.996 L 36.111,383.100"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 148.761,25.918 L 160.832,51.804"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 460.742,160.665 L 486.327,148.734"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 351.530,460.758 L 363.453,486.327"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 51.429,351.530 L 25.860,363.453"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 169.230,17.439 L 178.856,43.885"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 468.302,178.856 L 494.796,169.213"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 333.186,467.903 L 342.981,494.813"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 43.885,333.331 L 17.374,342.981"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 190.361,10.776 L 197.647,37.968"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 474.219,197.647 L 501.452,190.350"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 314.540,474.219 L 321.842,501.469"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 37.968,314.540 L 10.736,321.837"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 211.992,5.981 L 216.883,33.720"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 478.467,216.883 L 506.230,211.988"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path Data="F1 M 295.304,478.467 L 300.203,506.248"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 33.720,295.304 L 5.939,300.203"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 233.959,3.089 L 236.415,31.167"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 481.020,236.415 L 509.102,233.958"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 275.770,481.001 L 278.229,509.102"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 31.167,275.772 L 3.067,278.231"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 256.094,2.133 L 256.094,30.322"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 481.865,256.094 L 510.071,256.094"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 30.328,256.094 L 2.116,256.094"/>
+
+                            <!-- Слой 1/<Линейный график> -->
+                            <Path StrokeThickness="4.2" Stroke="#ffd1d1d1" StrokeMiterLimit="1.0" Data="F1 M 256.094,481.865 L 256.094,510.071"/>
+
+                            <!-- Слой 1/<Контур> -->
+                            <Path Data="F1 M 433.570,149.003 L 403.216,155.678 L 407.627,161.015 L 222.377,314.109 L 200.576,287.729 L 200.680,287.643 L 191.370,276.377 L 191.266,276.463 L 191.131,276.301 L 179.866,285.611 L 180.001,285.773 L 78.635,369.543 L 87.944,380.808 L 189.310,297.038 L 219.909,334.065 L 220.421,334.685 L 416.937,172.281 L 421.296,177.556 L 433.570,149.003 Z">
+                                <Path.Fill>
+                                    <LinearGradientBrush MappingMode="Absolute" StartPoint="124.121,-310.125" EndPoint="479.056,-310.125">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStop Offset="0.00" Color="#ff2b2b35"/>
+                                            <GradientStop Offset="0.50" Color="#ff74154a"/>
+                                            <GradientStop Offset="1.00" Color="#ffbd005e"/>
+                                        </LinearGradientBrush.GradientStops>
+                                        <LinearGradientBrush.Transform>
+                                            <MatrixTransform Matrix="1.000,0.000,-0.000,-1.000,-45.486,-45.219" />
+                                        </LinearGradientBrush.Transform>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+
+                            <!-- Слой 1/<Контур> -->
+                            <Path Data="F1 M 78.635,149.003 L 108.989,155.678 L 104.578,161.015 L 289.828,314.109 L 311.629,287.729 L 311.525,287.643 L 320.835,276.377 L 320.939,276.463 L 321.074,276.301 L 332.339,285.611 L 332.205,285.773 L 433.570,369.543 L 424.261,380.808 L 322.895,297.038 L 292.296,334.065 L 291.784,334.685 L 95.268,172.281 L 90.909,177.556 L 78.635,149.003 Z">
+                                <Path.Fill>
+                                    <LinearGradientBrush MappingMode="Absolute" StartPoint="479.056,-310.125" EndPoint="124.121,-310.125">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStop Offset="0.00" Color="#ff2b2b35"/>
+                                            <GradientStop Offset="0.50" Color="#ff156f5e"/>
+                                            <GradientStop Offset="1.00" Color="#ff00b386"/>
+                                        </LinearGradientBrush.GradientStops>
+                                        <LinearGradientBrush.Transform>
+                                            <MatrixTransform Matrix="1.000,0.000,-0.000,-1.000,-45.486,-45.219" />
+                                        </LinearGradientBrush.Transform>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+
+                            <!-- Слой 1/Auto -->
+                            <TextBlock Foreground="#ffffffff" Canvas.Left="44.048" Canvas.Top="138.667" FontSize="186.25" FontFamily="Microsoft YaHei UI">Au</TextBlock>
+                            <TextBlock Foreground="#ffffffff" Canvas.Left="289.866" Canvas.Top="138.667" FontSize="186.25" FontFamily="Microsoft YaHei UI">t</TextBlock>
+                            <TextBlock Foreground="#ffffffff" Canvas.Left="357.708" Canvas.Top="138.667" FontSize="186.25" FontFamily="Microsoft YaHei UI">o</TextBlock>
+
+                        </Canvas>
+                    </Canvas>
+                </Viewbox>
+
+            </DataTemplate>
+        </ContentControl.ContentTemplate>
+    </ContentControl>
+    
+    <!-- Strateg Image -->
+    <ContentControl x:Key="StrategImage">
+        <ContentControl.ContentTemplate>
+            <DataTemplate>
+
+                <Viewbox Width="36" Height="36"
+                        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    <Canvas Width="180.885" Height="511.848">
+
+                        <Canvas>
+
+                            <!-- Слой 1/<Контур> -->
+                            <Path Data="F1 M 88.188,0.000 L 0.000,111.296 L 54.166,111.276 L 43.076,111.283 L 43.076,111.296 L 51.619,111.296 L 51.619,396.710 L 88.285,396.710 L 88.285,111.296 L 134.003,111.296 L 134.003,111.250 L 176.571,111.230 L 88.188,0.000 Z">
+                                <Path.Fill>
+                                    <LinearGradientBrush MappingMode="Absolute" StartPoint="300.102,-442.335" EndPoint="296.983,-46.151">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStop Offset="0.00" Color="#ff2b2b35"/>
+                                            <GradientStop Offset="0.50" Color="#ff156f5e"/>
+                                            <GradientStop Offset="1.00" Color="#ff00b386"/>
+                                        </LinearGradientBrush.GradientStops>
+                                        <LinearGradientBrush.Transform>
+                                            <MatrixTransform Matrix="1.000,0.000,-0.000,-1.000,-209.558,-44.076" />
+                                        </LinearGradientBrush.Transform>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+
+                            <!-- Слой 1/<Контур> -->
+                            <Path Data="F1 M 138.317,400.597 L 138.317,400.552 L 129.265,400.552 L 129.265,115.137 L 92.600,115.137 L 92.600,400.552 L 47.390,400.552 L 47.390,400.566 L 58.481,400.572 L 4.314,400.552 L 92.502,511.848 L 180.885,400.617 L 138.317,400.597 Z">
+                                <Path.Fill>
+                                    <LinearGradientBrush MappingMode="Absolute" StartPoint="302.157,-159.630" EndPoint="302.157,-556.341">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStop Offset="0.00" Color="#ff2b2b35"/>
+                                            <GradientStop Offset="0.50" Color="#ff74154a"/>
+                                            <GradientStop Offset="1.00" Color="#ffbd005e"/>
+                                        </LinearGradientBrush.GradientStops>
+                                        <LinearGradientBrush.Transform>
+                                            <MatrixTransform Matrix="1.000,0.000,-0.000,-1.000,-209.558,-44.076" />
+                                        </LinearGradientBrush.Transform>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+
+                        </Canvas>
+                    </Canvas>
+                </Viewbox>
+
+            </DataTemplate>
+        </ContentControl.ContentTemplate>
+    </ContentControl>
+    
+    <!-- Setting Image -->
+    <ContentControl x:Key="SettingImage">
+        <ContentControl.ContentTemplate>
+            <DataTemplate>
+
+                <Viewbox Width="36" Height="36"
+                        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    <Canvas Width="507.146" Height="507.161">
+
+                        <Canvas>
+
+                            <!-- Слой 1/<Составной контур> -->
+                            <Path StrokeThickness="0.8" Stroke="#ff3b3b45" StrokeMiterLimit="1.0" Data="F1 M 216.729,344.221 C 168.245,324.508 144.922,269.224 164.636,220.741 C 184.349,172.258 239.633,148.935 288.116,168.649 C 336.599,188.362 359.922,243.645 340.209,292.128 C 320.496,340.612 265.212,363.934 216.729,344.221 Z M 415.094,319.243 C 428.827,285.468 468.489,269.523 505.094,282.231 C 507.530,260.945 507.208,239.695 504.318,218.928 C 488.163,225.583 469.762,227.068 452.128,221.504 C 412.182,208.899 394.175,166.477 412.885,128.843 C 420.926,112.670 434.256,100.603 449.715,93.479 C 437.737,78.778 423.986,65.372 408.686,53.522 C 408.551,53.868 408.460,54.218 408.319,54.563 C 393.194,91.764 352.572,110.390 317.588,96.166 C 282.603,81.941 266.505,40.253 281.631,3.051 C 281.771,2.707 281.950,2.392 282.094,2.051 C 259.565,-0.514 237.071,-0.028 215.157,3.358 C 221.984,19.071 224.150,36.837 219.879,54.070 C 209.451,96.148 166.277,115.703 126.197,95.397 C 110.359,87.373 98.278,74.637 90.543,59.930 C 76.699,71.566 64.030,84.771 52.802,99.410 C 82.272,117.743 95.811,153.274 83.198,184.295 C 70.585,215.317 36.093,231.318 2.191,223.884 C -0.040,242.688 -0.150,261.474 1.798,279.926 C 17.759,275.267 35.455,275.219 52.420,281.264 C 94.206,296.152 110.373,339.824 89.145,375.602 C 80.573,390.049 67.298,400.662 52.111,406.823 C 65.317,424.218 80.872,439.992 98.529,453.662 C 114.709,419.687 152.743,402.735 186.212,415.665 C 220.404,428.874 237.125,468.368 224.800,505.068 C 244.145,507.293 263.467,507.290 282.420,505.100 C 276.300,489.161 275.170,471.151 280.721,453.893 C 293.626,413.772 336.194,395.987 373.583,414.955 C 390.061,423.315 402.166,437.249 409.063,453.309 C 425.599,440.462 440.637,425.484 453.730,408.558 C 418.642,392.117 401.361,353.019 415.094,319.243 Z">
+                                <Path.Fill>
+                                    <RadialGradientBrush MappingMode="Absolute" GradientOrigin="304.081,-297.449" Center="304.081,-297.449" RadiusX="253.155" RadiusY="253.155">
+                                        <RadialGradientBrush.GradientStops>
+                                            <GradientStop Offset="0.00" Color="#ff2b2b35"/>
+                                            <GradientStop Offset="0.50" Color="#ff3d3d47"/>
+                                            <GradientStop Offset="1.00" Color="#ff4f4f59"/>
+                                            <GradientStop Offset="1.00" Color="#ff4f4f59"/>
+                                        </RadialGradientBrush.GradientStops>
+                                        <RadialGradientBrush.Transform>
+                                            <MatrixTransform Matrix="1.000,0.000,-0.000,-1.000,-50.508,-43.868" />
+                                        </RadialGradientBrush.Transform>
+                                    </RadialGradientBrush>
+                                </Path.Fill>
+                            </Path>
+
+                        </Canvas>
+                    </Canvas>
+                </Viewbox>
+
+            </DataTemplate>
+        </ContentControl.ContentTemplate>
+    </ContentControl>
+
+
+
+</ResourceDictionary>
